@@ -1,0 +1,83 @@
+KA
+ 	
+Khubaib Ahmed added you as a collaborator
+View in Asana
+ 
+ 
+Task
+Automate prospecting
+ 
+Assigned to	 	Due date
+—	 	—
+ 
+Description
+Description:
+Develop a feature to automate prospecting by finding the right contacts at targeted companies. This tool will utilize LinkedIn (Sales Navigator, iScraper API) and SERP for data sourcing. It will filter contacts based on specific criteria such as job titles, seniority, and keywords, and provide LinkedIn URLs of matching profiles.
+
+Use Case:
+Sales and marketing teams will use this feature to find new people to contact.
+After identifying a target company, users will input desired and undesirable titles, seniority levels, keywords, and the required number of profiles.
+The feature then generates a list of LinkedIn URLs of individuals who match the set criteria.
+
+Current Solutions:
+Currently, prospecting is done manually, requiring significant time to search through LinkedIn or Google.
+Sales Navigator and iScraper are used independently, without integration into our system, leading to a disjointed process.
+Manual filtering of profiles based on titles, seniority, and keywords, which is time-consuming and prone to human error.
+
+Parameters:
+profile_search{{companyName, companylinkedinURL, type, titleKeywords, titleExclusion, seniority, limit, linkedinIDsExclusion}}
+companyName:
+type: string
+value: Name of the company
+example: Ultrarev
+
+companylinkedinURL:
+type: string
+value: Company LinkedIn URL
+example: https://www.linkedin.com/company/ultrarev
+
+type:
+type: string
+value: Output type
+example values: Single Search, Group Search
+
+titleKeywords:
+type: List (str)
+value: Title keywords that the user wants to search for
+example: [CEO, Founder, President]
+
+titleExclusion:
+type: List (str)
+value: Title keywords that the user wants to exclude
+example: [Intern, Student, Finance]
+
+seniority:
+type: List (str)
+value: Seniority roles the user wants to target
+example: [Entry Level, Senior, Director]
+
+limit:
+type: Int
+value: number of profiles/company
+example: 10
+
+linkedinIDsExclusion:
+type: List (str)
+value: List of prospect LinkedIn IDs the user does not want to include in the results
+example: [khubaib-ahmed-hingoro, zakimahomed]
+
+Sample Query with Expected Responses:
+
+for single search:
+profile_search{{"Ultrarev", "https://www.linkedin.com/company/ultrarev, "Signal Search", ["Product Operations"], ["Intern", "Student"], ["Director'] ,limit = 1, [https://pk.linkedin.com/in/muhammad-ali-arif-b7875b1a7}}
+
+Output Response: Should include all the profile and company metadata of the found profiles that iscraper gives you.
+body{ all the available meta data for company and profile}
+
+for group search:
+profile_search{{"Ultrarev", "https://www.linkedin.com/company/ultrarev, "Group Search", ["Product Operations", "Product Manager", "Product Analyst], ["Intern", "Student"], ["Senior', "Executive", "Director"] ,limit = 5, [https://pk.linkedin.com/in/muhammad-ali-arif-b7875b1a7}}
+
+Output Response: Should include all the profile and company metadata of the found profiles that iscraper gives you.
+body{ * URL 1 Meta Data
+* URL 2 Meta Data
+* URL 3 Meta Data ...}

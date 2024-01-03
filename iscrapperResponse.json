@@ -1,0 +1,314 @@
+{
+    "profile_id": "salman-moosa-1bb322194",
+    "first_name": "Salman",
+    "last_name": "Moosa",
+    "sub_title": "Sr. Software Engineer at LathranSoft LLC",
+    "profile_picture": "https://media.licdn.com/dms/image/C4D03AQEQSNkiKVS1eA/profile-displayphoto-shrink_800_800/0/1593515315116?e=1709769600&v=beta&t=KdUpzFKoTF2fm4qfTNhRt1AclQDj16bI12BiY4AMBIk",
+    "background_image": null,
+    "profile_type": "personal",
+    "entity_urn": "ACoAAC2cFJ8B810rAMPNXU62oZnZxZr0vgdEEKs",
+    "object_urn": 765203615,
+    "birth_date": null,
+    "summary": "Experienced Software Engineer with a demonstrated history of working in the information technology and services industry. Strong professional and highly motivated.",
+    "location": {
+        "country": null,
+        "short": "Pakistan",
+        "city": null,
+        "state": null,
+        "default": "Pakistan"
+    },
+    "premium": false,
+    "influencer": false,
+    "treasury_media": [],
+    "languages": {
+        "primary_locale": {
+            "country": "US",
+            "language": "en"
+        },
+        "supported_locales": [
+            {
+                "country": "US",
+                "language": "en"
+            }
+        ],
+        "profile_languages": []
+    },
+    "industry": "Information Technology & Services",
+    "education": [
+        {
+            "date": {
+                "start": {
+                    "month": null,
+                    "day": null,
+                    "year": 2015
+                },
+                "end": {
+                    "month": null,
+                    "day": null,
+                    "year": 2018
+                }
+            },
+            "school": {
+                "name": "Aptech Pakistan",
+                "logo": "https://media.licdn.com/dms/image/C560BAQGEGFb2fGf5uw/company-logo_400_400/0/1630609974784/aptech_computer_education_pakistan_operatons_logo?e=1712188800&v=beta&t=qq7WmAXd_0xpFBokgpMQ3OTac4SLQBESgwx9mCnKlBA",
+                "url": "https://www.linkedin.com/school/aptech-computer-education-pakistan-operatons/"
+            },
+            "degree_name": "ACCP",
+            "field_of_study": "Computer Software Engineering",
+            "grade": null
+        }
+    ],
+    "patents": [],
+    "awards": [],
+    "certifications": [],
+    "organizations": [],
+    "projects": [],
+    "publications": [],
+    "courses": [],
+    "test_scores": [],
+    "position_groups": [
+        {
+            "company": {
+                "id": 69409711,
+                "name": "LathranSoft LLC ",
+                "logo": "https://media.licdn.com/dms/image/C4D0BAQFYaFRksHki_w/company-logo_400_400/0/1661942306437/lathransoft_llc_logo?e=1712188800&v=beta&t=U8f6mFbw90ukgtv17uWeshQHA0LX6qMyapN9UXWe5ec",
+                "url": "https://www.linkedin.com/company/lathransoft-llc/",
+                "employees": {
+                    "start": 11,
+                    "end": 50
+                }
+            },
+            "date": {
+                "start": {
+                    "month": 3,
+                    "day": null,
+                    "year": 2021
+                },
+                "end": {
+                    "month": null,
+                    "day": null,
+                    "year": null
+                }
+            },
+            "profile_positions": [
+                {
+                    "location": null,
+                    "date": {
+                        "start": {
+                            "month": 3,
+                            "day": null,
+                            "year": 2021
+                        },
+                        "end": {
+                            "month": null,
+                            "day": null,
+                            "year": null
+                        }
+                    },
+                    "company": "LathranSoft",
+                    "description": null,
+                    "title": "Senior Software Engineer",
+                    "employment_type": "Full-time"
+                }
+            ]
+        },
+        {
+            "company": {
+                "id": 66345945,
+                "name": "Medusa Labs Pakistan",
+                "logo": "https://media.licdn.com/dms/image/D4E0BAQEOSCIwmwmRJw/company-logo_400_400/0/1683850748523?e=1712188800&v=beta&t=IJ0LhWMqRnEm2wyHINFjIaJJZKSmTqK0QmytpJuKwww",
+                "url": "https://www.linkedin.com/company/medusa-labs-pk/",
+                "employees": {
+                    "start": 11,
+                    "end": 50
+                }
+            },
+            "date": {
+                "start": {
+                    "month": 9,
+                    "day": null,
+                    "year": 2020
+                },
+                "end": {
+                    "month": 1,
+                    "day": null,
+                    "year": 2021
+                }
+            },
+            "profile_positions": [
+                {
+                    "location": null,
+                    "date": {
+                        "start": {
+                            "month": 9,
+                            "day": null,
+                            "year": 2020
+                        },
+                        "end": {
+                            "month": 1,
+                            "day": null,
+                            "year": 2021
+                        }
+                    },
+                    "company": "Medusa Labs",
+                    "description": "- Contribute to the entire app lifecycle\n- Develop functional and fast-responsive web applications, using markup languages\nMaintain websites\n- Elaborate mobile-based and web-based features\n- API Implementation (Fedex, UPS, DHL, Algolia Search, Aftership, Google, Facebook, Instagram, etc)\n- Troubleshoot apps for bugs\n- Fix bugs if necessary and improve usability\n- Improve apps for maximum speed\n- Troubleshoot UI and improve its performance accordingly\n- Employ the latest technology in order to re-built legacy apps\n- Integrate UI elements with server-side ones\n- Detect and fulfill front-end and back-end requirements\n- Perform training and support activities\n- Develop reusable code\n- Collaborate with developers, designers, sys admins, and customers. Tailor web solutions to their needs and requirements\n- Write comprehensive manuals, guides, and documents\n- Compile prototype and quality mockups\n- Make sure that high-quality graphic standards are met\n- Stay consistent with company brand",
+                    "title": "Software Engineer",
+                    "employment_type": "Full-time"
+                }
+            ]
+        },
+        {
+            "company": {
+                "id": 14485995,
+                "name": "Hashlob",
+                "logo": "https://media.licdn.com/dms/image/C510BAQFBoRQD06OT5A/company-logo_400_400/0/1630616503367/hashlob_logo?e=1712188800&v=beta&t=9q8Fj71cT_udT6Hz04B9J1nHgWfYDCJNj709LZ2x2s8",
+                "url": "https://www.linkedin.com/company/hashlob/",
+                "employees": {
+                    "start": 11,
+                    "end": 50
+                }
+            },
+            "date": {
+                "start": {
+                    "month": 1,
+                    "day": null,
+                    "year": 2020
+                },
+                "end": {
+                    "month": 8,
+                    "day": null,
+                    "year": 2020
+                }
+            },
+            "profile_positions": [
+                {
+                    "location": "Karāchi, Sindh, Pakistan",
+                    "date": {
+                        "start": {
+                            "month": 1,
+                            "day": null,
+                            "year": 2020
+                        },
+                        "end": {
+                            "month": 8,
+                            "day": null,
+                            "year": 2020
+                        }
+                    },
+                    "company": "Hashlob",
+                    "description": null,
+                    "title": "Software Engineer",
+                    "employment_type": "Full-time"
+                }
+            ]
+        },
+        {
+            "company": {
+                "id": 10185788,
+                "name": "Eiwan Developments",
+                "logo": "https://media.licdn.com/dms/image/C4E0BAQGA3sLRMzpyLg/company-logo_400_400/0/1651485302901?e=1712188800&v=beta&t=TEJiDMHmMaqnJ-80-7k7kqlWzPajIYV6P6r2mtmrU_M",
+                "url": "https://www.linkedin.com/company/eiwanpvtltd/",
+                "employees": {
+                    "start": 11,
+                    "end": 50
+                }
+            },
+            "date": {
+                "start": {
+                    "month": 12,
+                    "day": null,
+                    "year": 2018
+                },
+                "end": {
+                    "month": 1,
+                    "day": null,
+                    "year": 2020
+                }
+            },
+            "profile_positions": [
+                {
+                    "location": null,
+                    "date": {
+                        "start": {
+                            "month": 12,
+                            "day": null,
+                            "year": 2018
+                        },
+                        "end": {
+                            "month": 1,
+                            "day": null,
+                            "year": 2020
+                        }
+                    },
+                    "company": "Eiwan",
+                    "description": null,
+                    "title": "Web Application Developer",
+                    "employment_type": null
+                }
+            ]
+        },
+        {
+            "company": {
+                "id": 663233,
+                "name": "Aptech Pakistan",
+                "logo": "https://media.licdn.com/dms/image/C560BAQGEGFb2fGf5uw/company-logo_400_400/0/1630609974784/aptech_computer_education_pakistan_operatons_logo?e=1712188800&v=beta&t=qq7WmAXd_0xpFBokgpMQ3OTac4SLQBESgwx9mCnKlBA",
+                "url": "https://www.linkedin.com/school/aptech-computer-education-pakistan-operatons/",
+                "employees": {
+                    "start": 201,
+                    "end": 500
+                }
+            },
+            "date": {
+                "start": {
+                    "month": 6,
+                    "day": null,
+                    "year": 2016
+                },
+                "end": {
+                    "month": 11,
+                    "day": null,
+                    "year": 2018
+                }
+            },
+            "profile_positions": [
+                {
+                    "location": "Karāchi, Sindh, Pakistan",
+                    "date": {
+                        "start": {
+                            "month": 6,
+                            "day": null,
+                            "year": 2016
+                        },
+                        "end": {
+                            "month": 11,
+                            "day": null,
+                            "year": 2018
+                        }
+                    },
+                    "company": "Aptech Pakistan",
+                    "description": null,
+                    "title": "Web Developer",
+                    "employment_type": "Full-time"
+                }
+            ]
+        }
+    ],
+    "volunteer_experiences": [],
+    "skills": [
+        "Web Design",
+        "User Interface Design",
+        "PHP",
+        "React Native",
+        "JavaScript",
+        "AngularJS",
+        "MySQL",
+        "Git",
+        "React.js",
+        "WordPress",
+        "Laravel",
+        "REST API"
+    ],
+    "network_info": null,
+    "related_profiles": null,
+    "contact_info": null
+}
