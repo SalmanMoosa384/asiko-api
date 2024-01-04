@@ -4,12 +4,12 @@ const getProfile = require("../utils/functions/iscrapper/getProfile");
 
 const brightDataSerpApi = async function (reqBody) {
   if (
-    reqBody.titleKeywords &&
-    reqBody.titleExclusion &&
-    reqBody.companylinkedinURL &&
-    reqBody.companyName &&
-    reqBody.seniority &&
-    reqBody.linkedinIDsExclusion
+    reqBody?.titleKeywords &&
+    reqBody?.titleExclusion &&
+    reqBody?.companylinkedinURL &&
+    reqBody?.companyName &&
+    reqBody?.seniority &&
+    reqBody?.linkedinIDsExclusion
   ) {
     let searchQuery = `intitle:" - ${reqBody.companyName}"`;
 
