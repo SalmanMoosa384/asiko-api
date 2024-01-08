@@ -1,4 +1,3 @@
-require("dotenv").config();
 const axios = require("axios");
 module.exports = async function (responseId) {
   let serpRes = await axios({

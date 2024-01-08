@@ -1,3 +1,3 @@
-const {brightDataSerpApi} = require('./brightdataController');
+const {prospectController} = require('./prospectController');
 
-module.exports={brightDataSerpApi}
+module.exports={prospectController}

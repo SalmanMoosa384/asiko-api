@@ -1,0 +1,88 @@
+{
+    "profile_type": "company",
+    "details": {
+        "name": "LathranSoft",
+        "universal_name": "lathransoft-llc",
+        "company_id": 69409711,
+        "description": "Welcome to LathranSoft, a premier boutique software firm headquartered in Columbus, Ohio, with strategic offices in the UAE and Pakistan. Our unwavering dedication to excellence drives us to deliver distinctive quality and exceptional outcomes in every facet of our business.\n\nAt LathranSoft, we take pride in our customer-centric approach, ensuring that your satisfaction is at the heart of everything we do. With a network of esteemed partners and advisors, we harness the collective expertise of our in-house software engineers, full-stack developers, creative studio professionals, and web and app developers to bring your vision to life.\n\nWhat sets us apart is our commitment to understanding your unique business needs. We work closely with you, leveraging our industry-leading talent and innovative mindset, to craft tailored solutions that surpass expectations. Through personalized attention and a deep understanding of your goals, we strive to empower your organization for success.\n\nAs a trailblazer in the industry, we are dedicated to pushing the boundaries of technology and driving transformative change. Our meticulous approach to problem-solving and our focus on delivering exceptional service sets us apart as a trusted partner in your digital journey.\n\nExperience the LathranSoft advantage and unlock the potential of your business. Join us as we combine customer-focused innovation with unparalleled expertise to propel your organization to new heights. Let us be your strategic partner in achieving lasting success in the digital age.",
+        "phone": null,
+        "followers": 3317,
+        "urls": {
+            "company_page": "https://lathran.com/",
+            "li_url": "https://www.linkedin.com/company/lathransoft-llc"
+        },
+        "industries": [
+            "IT Services and IT Consulting"
+        ],
+        "images": {
+            "logo": "https://media.licdn.com/dms/image/C4D0BAQFYaFRksHki_w/company-logo_400_400/0/1661942306437/lathransoft_llc_logo?e=1712793600&v=beta&t=P4QcQQ4HDlTdKcdpYLfPFwNcn7r3StcNqqe4HuHDVeA",
+            "cover": "https://media.licdn.com/dms/image/D4D3DAQGly2DziiJ9Pg/image-scale_191_1128/0/1661941688771/lathransoft_llc_cover?e=1705320000&v=beta&t=IYo8Nww07HnWp-NN9m5h-W3w0KcMDXNNjs6JwfuhQJY"
+        },
+        "tagline": "Customer Friendly as a service",
+        "founded": {
+            "month": null,
+            "day": null,
+            "year": 2009
+        },
+        "type": "Privately Held",
+        "staff": {
+            "total": 21,
+            "range": {
+                "start": 11,
+                "end": 50
+            }
+        },
+        "call_to_action": {
+            "url": "https://lathran.com/",
+            "text": "Contact us"
+        },
+        "locations": {
+            "headquarter": {
+                "country": "US",
+                "geographic_area": "Ohio",
+                "city": "Columbus",
+                "postal_code": null,
+                "line1": null,
+                "line2": null,
+                "description": null
+            },
+            "other": [
+                {
+                    "country": "US",
+                    "geographic_area": "Ohio",
+                    "city": "Columbus",
+                    "postal_code": null,
+                    "line1": null,
+                    "line2": null,
+                    "description": null
+                },
+                {
+                    "country": "PK",
+                    "geographic_area": "Sind",
+                    "city": "Karachi",
+                    "postal_code": null,
+                    "line1": "KHI",
+                    "line2": null,
+                    "description": null
+                },
+                {
+                    "country": "AE",
+                    "geographic_area": null,
+                    "city": "Dubai",
+                    "postal_code": null,
+                    "line1": "DXB",
+                    "line2": null,
+                    "description": null
+                }
+            ]
+        },
+        "specialities": [],
+        "funding_data": null,
+        "hashtags": [
+            "lathran",
+            "lathranpod",
+            "lathransoft"
+        ]
+    },
+    "related_companies": []
+}
