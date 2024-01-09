@@ -42,7 +42,7 @@ const prospectController = async function (reqBody) {
                 return (
                   prof.company.id == companyId &&
                   prof.profile_positions[0].title.toLocaleLowerCase() ==
-                    jobtitle
+                    jobtitle.toLocaleLowerCase()
                 );
               });
             if (getCurrentCompanyPosition.length > 0) {
