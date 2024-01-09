@@ -7,8 +7,8 @@ const extractCompanyIdFromUrl = (url) => {
 
 const iScrapperLimit = (
   value,
-  defaultValue = 10,
-  lowerLimit = 10,
+  defaultValue = 20,
+  lowerLimit = 20,
   upperLimit = 20
 ) => {
   if (value < lowerLimit) {
