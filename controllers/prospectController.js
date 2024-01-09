@@ -33,7 +33,6 @@ const prospectController = async function (reqBody) {
             if (count == limit) {
               break;
             }
-            count++;
             let profileDetail = await getProfile(
               profile.profile_id,
               "personal"
@@ -47,6 +46,7 @@ const prospectController = async function (reqBody) {
                 );
               });
             if (getCurrentCompanyPosition.length > 0) {
+              count++;
               responseDetail.profiles.push(profileDetail.data);
             } else {
               count--;

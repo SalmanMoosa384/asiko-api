@@ -30,21 +30,22 @@ const iScraperOffset = (count, limit = 20) => {
 };
 
 const sortByTitle = (profiles, desiredOrder) => {
-  const orderArray = [desiredOrder.trim().toLowerCase()];
+  const title = desiredOrder.trim().toLowerCase();
 
   return profiles.sort((a, b) => {
-    let indexA = orderArray.indexOf(a.sub_title.toLowerCase());
-    let indexB = orderArray.indexOf(b.sub_title.toLowerCase());
+    const titleA = a.sub_title.toLowerCase();
+    const titleB = b.sub_title.toLowerCase();
 
-    if (indexA === -1) {
-      indexA = Number.MAX_SAFE_INTEGER; // Move unmatched titles to the end
+    const includesTitleA = titleA.includes(title);
+    const includesTitleB = titleB.includes(title);
+
+    if (includesTitleA && !includesTitleB) {
+      return -1; // Move profile A up
+    } else if (!includesTitleA && includesTitleB) {
+      return 1; // Move profile B up
+    } else {
+      return 0; // Maintain order for profiles with and without the specified title
     }
-
-    if (indexB === -1) {
-      indexB = Number.MAX_SAFE_INTEGER; // Move unmatched titles to the end
-    }
-
-    return indexA - indexB;
   });
 };
 

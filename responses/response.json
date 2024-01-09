@@ -1,0 +1,1052 @@
+{
+    "success": true,
+    "data": {
+        "profiles": [
+            {
+                "profile_id": "juansarabia",
+                "first_name": "Juan",
+                "last_name": "Sarabia",
+                "sub_title": "Customer Success Manager at Kustomer",
+                "profile_picture": "https://media.licdn.com/dms/image/C4E03AQHNE_RcMzBAbQ/profile-displayphoto-shrink_400_400/0/1517866778273?e=1710374400&v=beta&t=_fz8wc1GWM0R40Pc3KRB3YFnuXIsUs_PBa1qfNJ9UAw",
+                "background_image": null,
+                "profile_type": "personal",
+                "entity_urn": "ACoAACOnSwMBWxygMPx7v27EcgSnFJPC-ufJlzs",
+                "object_urn": 598166275,
+                "birth_date": null,
+                "summary": "Technology expert with a passion for customer success. \nI am multi lingual and able to connect across the English, Spanish, and Portuguese languages.",
+                "location": {
+                    "country": "United States",
+                    "short": "New York, New York",
+                    "city": "New York",
+                    "state": "New York",
+                    "default": "New York, New York, United States"
+                },
+                "premium": true,
+                "influencer": false,
+                "treasury_media": [],
+                "languages": {
+                    "primary_locale": {
+                        "country": "US",
+                        "language": "en"
+                    },
+                    "supported_locales": [
+                        {
+                            "country": "US",
+                            "language": "en"
+                        }
+                    ],
+                    "profile_languages": []
+                },
+                "industry": "Computer Software",
+                "education": [
+                    {
+                        "date": {
+                            "start": {
+                                "month": null,
+                                "day": null,
+                                "year": 2009
+                            },
+                            "end": {
+                                "month": null,
+                                "day": null,
+                                "year": 2012
+                            }
+                        },
+                        "school": {
+                            "name": "Montgomery College",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQH1PxxWKT99VA/company-logo_400_400/0/1653402524094/montgomery_college_logo?e=1712793600&v=beta&t=UJ7kWaX8jcwlDCESR2FC2k35LkVzX04gRtvIsOvajPQ",
+                            "url": "https://www.linkedin.com/school/montgomery-college/"
+                        },
+                        "degree_name": "Associate's degree",
+                        "field_of_study": null,
+                        "grade": null
+                    }
+                ],
+                "patents": [],
+                "awards": [],
+                "certifications": [
+                    {
+                        "name": "Microsoft 365 Certified: Fundamentals",
+                        "date": {
+                            "start": {
+                                "month": 5,
+                                "day": null,
+                                "year": 2021
+                            },
+                            "end": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            }
+                        },
+                        "authority": "Microsoft",
+                        "url": "https://www.credly.com/badges/70867a16-e42e-4aeb-b998-43a660c988f5?source=linked_in_profile",
+                        "license_number": "991420806",
+                        "display_source": "credly.com",
+                        "company": {
+                            "id": null,
+                            "name": "Microsoft",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_400_400/0/1630652622688/microsoft_logo?e=1712793600&v=beta&t=M61ge1w5ID7jsbTpfRTiQ3i5Nu1-rpDOol8-QkkTgIc",
+                            "url": null
+                        }
+                    },
+                    {
+                        "name": "Certified Microsoft Innovative Educator Program ",
+                        "date": {
+                            "start": {
+                                "month": 4,
+                                "day": null,
+                                "year": 2020
+                            },
+                            "end": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            }
+                        },
+                        "authority": "Microsoft",
+                        "url": null,
+                        "license_number": null,
+                        "display_source": null,
+                        "company": {
+                            "id": null,
+                            "name": "Microsoft",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_400_400/0/1630652622688/microsoft_logo?e=1712793600&v=beta&t=M61ge1w5ID7jsbTpfRTiQ3i5Nu1-rpDOol8-QkkTgIc",
+                            "url": null
+                        }
+                    },
+                    {
+                        "name": "Executive Presence on Video Conference Calls",
+                        "date": {
+                            "start": {
+                                "month": 3,
+                                "day": null,
+                                "year": 2020
+                            },
+                            "end": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            }
+                        },
+                        "authority": "LinkedIn",
+                        "url": "https://www.linkedin.com/learning/certificates/4af7223157e4f72930ca1ed7b376293d3f1bc99bf8e8871eab9affad8ad2ff67?trk=backfilled_certificate",
+                        "license_number": null,
+                        "display_source": "linkedin.com",
+                        "company": {
+                            "id": null,
+                            "name": "LinkedIn",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQHaVYd13rRz3A/company-logo_400_400/0/1638831590218/linkedin_logo?e=1712793600&v=beta&t=bpbhODspzMc2NFPr2LzXvtDU9f51d2R0vbdvNHPHBPk",
+                            "url": null
+                        }
+                    }
+                ],
+                "organizations": [],
+                "projects": [],
+                "publications": [],
+                "courses": [],
+                "test_scores": [],
+                "position_groups": [
+                    {
+                        "company": {
+                            "id": 10517045,
+                            "name": "Kustomer",
+                            "logo": "https://media.licdn.com/dms/image/C4E0BAQGFXydz_dl9mQ/company-logo_400_400/0/1630592525048/kustomer_logo?e=1712793600&v=beta&t=WMFojuI-e74qQplhYN_MdaQiKFUfoQNMXfg2xUAcxeY",
+                            "url": "https://www.linkedin.com/company/kustomer/",
+                            "employees": {
+                                "start": 201,
+                                "end": 500
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 4,
+                                "day": null,
+                                "year": 2023
+                            },
+                            "end": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 4,
+                                        "day": null,
+                                        "year": 2023
+                                    },
+                                    "end": {
+                                        "month": null,
+                                        "day": null,
+                                        "year": null
+                                    }
+                                },
+                                "company": "Kustomer",
+                                "description": null,
+                                "title": "Customer Success Manager",
+                                "employment_type": "Full-time"
+                            }
+                        ]
+                    },
+                    {
+                        "company": {
+                            "id": 10667,
+                            "name": "Meta",
+                            "logo": "https://media.licdn.com/dms/image/C4E0BAQFdNatYGiBelg/company-logo_400_400/0/1636138754252/facebook_logo?e=1712793600&v=beta&t=gsTXJKiNCkRtyAeSn5-mG8Ddyja05ouN0u7tY-zrMdE",
+                            "url": "https://www.linkedin.com/company/meta/",
+                            "employees": {
+                                "start": 10001,
+                                "end": null
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 12,
+                                "day": null,
+                                "year": 2021
+                            },
+                            "end": {
+                                "month": 4,
+                                "day": null,
+                                "year": 2023
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "New York, New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 12,
+                                        "day": null,
+                                        "year": 2021
+                                    },
+                                    "end": {
+                                        "month": 4,
+                                        "day": null,
+                                        "year": 2023
+                                    }
+                                },
+                                "company": "Meta",
+                                "description": null,
+                                "title": "Customer Success Manager",
+                                "employment_type": "Full-time"
+                            }
+                        ]
+                    },
+                    {
+                        "company": {
+                            "id": 1035,
+                            "name": "Microsoft",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_400_400/0/1630652622688/microsoft_logo?e=1712793600&v=beta&t=M61ge1w5ID7jsbTpfRTiQ3i5Nu1-rpDOol8-QkkTgIc",
+                            "url": "https://www.linkedin.com/company/microsoft/",
+                            "employees": {
+                                "start": 10001,
+                                "end": null
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 5,
+                                "day": null,
+                                "year": 2014
+                            },
+                            "end": {
+                                "month": 12,
+                                "day": null,
+                                "year": 2021
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "New York, New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 3,
+                                        "day": null,
+                                        "year": 2020
+                                    },
+                                    "end": {
+                                        "month": 12,
+                                        "day": null,
+                                        "year": 2021
+                                    }
+                                },
+                                "company": "Microsoft",
+                                "description": null,
+                                "title": "Customer Success Trainer",
+                                "employment_type": "Full-time"
+                            },
+                            {
+                                "location": "New York, New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 10,
+                                        "day": null,
+                                        "year": 2016
+                                    },
+                                    "end": {
+                                        "month": 3,
+                                        "day": null,
+                                        "year": 2020
+                                    }
+                                },
+                                "company": "Microsoft",
+                                "description": null,
+                                "title": "Service Advisor",
+                                "employment_type": null
+                            },
+                            {
+                                "location": "Tysons Corner, Virginia, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 5,
+                                        "day": null,
+                                        "year": 2014
+                                    },
+                                    "end": {
+                                        "month": 10,
+                                        "day": null,
+                                        "year": 2016
+                                    }
+                                },
+                                "company": "Microsoft",
+                                "description": null,
+                                "title": "Product Advisor",
+                                "employment_type": null
+                            }
+                        ]
+                    }
+                ],
+                "volunteer_experiences": [],
+                "skills": [
+                    "Microsoft Office",
+                    "Spanish",
+                    "Sales & Marketing",
+                    "Technical Support",
+                    "Troubleshooting",
+                    "Brand Development",
+                    "Customer Relationship Management (CRM)",
+                    "Social Media",
+                    "retail",
+                    "sales",
+                    "Customer Experience",
+                    "Software Installation",
+                    "Customer Retention",
+                    "Information Technology",
+                    "Microsoft Outlook",
+                    "Microsoft PowerPoint",
+                    "Microsoft Word",
+                    "Computer Hardware",
+                    "Operating Systems",
+                    "Video Conferencing"
+                ],
+                "network_info": null,
+                "related_profiles": null,
+                "contact_info": null
+            },
+            {
+                "profile_id": "sally-park",
+                "first_name": "Sally",
+                "last_name": "Park",
+                "sub_title": "Customer Success | Human First | Multi-Media Creative",
+                "profile_picture": "https://media.licdn.com/dms/image/D4D03AQGVDF8yGQDfXQ/profile-displayphoto-shrink_800_800/0/1692834678953?e=1710374400&v=beta&t=BwAgkhAEVZ40IdkoQbQoSqcrULQ_xSYNXLaw5Hzta30",
+                "background_image": "https://media.licdn.com/dms/image/C4E16AQEDJ9XOEeryPQ/profile-displaybackgroundimage-shrink_350_1400/0/1517621737440?e=1710374400&v=beta&t=WmMApN-jqQ6iH0ip2MIAUDpi7tX-sRPD2Y2br2XBU6w",
+                "profile_type": "personal",
+                "entity_urn": "ACoAABiBpSUBC6b-yZHjo_oZ9JFiCm62C33LbXo",
+                "object_urn": 411149605,
+                "birth_date": null,
+                "summary": null,
+                "location": {
+                    "country": "United States",
+                    "short": "New York, New York",
+                    "city": "New York",
+                    "state": "New York",
+                    "default": "New York, New York, United States"
+                },
+                "premium": false,
+                "influencer": false,
+                "treasury_media": [],
+                "languages": {
+                    "primary_locale": {
+                        "country": "US",
+                        "language": "en"
+                    },
+                    "supported_locales": [
+                        {
+                            "country": "US",
+                            "language": "en"
+                        }
+                    ],
+                    "profile_languages": [
+                        {
+                            "name": "English",
+                            "proficiency": "NATIVE_OR_BILINGUAL"
+                        },
+                        {
+                            "name": "Korean",
+                            "proficiency": "NATIVE_OR_BILINGUAL"
+                        }
+                    ]
+                },
+                "industry": "Computer Software",
+                "education": [
+                    {
+                        "date": {
+                            "start": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            },
+                            "end": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            }
+                        },
+                        "school": {
+                            "name": "Chapman University",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQGvJzEZrgi1YA/company-logo_400_400/0/1630619422853/chapman_university_logo?e=1712793600&v=beta&t=saNY1TbQnfxdCyPQXx4D-8U95xdHZg02XTliNQLzdos",
+                            "url": "https://www.linkedin.com/school/chapman-university/"
+                        },
+                        "degree_name": "Bachelor's degree",
+                        "field_of_study": "Business Administration and Management, General",
+                        "grade": "Graduate"
+                    },
+                    {
+                        "date": {
+                            "start": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            },
+                            "end": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            }
+                        },
+                        "school": {
+                            "name": "Newport High School",
+                            "logo": null,
+                            "url": null
+                        },
+                        "degree_name": "High School Graduate",
+                        "field_of_study": null,
+                        "grade": null
+                    }
+                ],
+                "patents": [],
+                "awards": [],
+                "certifications": [],
+                "organizations": [],
+                "projects": [],
+                "publications": [],
+                "courses": [],
+                "test_scores": [],
+                "position_groups": [
+                    {
+                        "company": {
+                            "id": 10517045,
+                            "name": "Kustomer",
+                            "logo": "https://media.licdn.com/dms/image/C4E0BAQGFXydz_dl9mQ/company-logo_400_400/0/1630592525048/kustomer_logo?e=1712793600&v=beta&t=WMFojuI-e74qQplhYN_MdaQiKFUfoQNMXfg2xUAcxeY",
+                            "url": "https://www.linkedin.com/company/kustomer/",
+                            "employees": {
+                                "start": 201,
+                                "end": 500
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 8,
+                                "day": null,
+                                "year": 2023
+                            },
+                            "end": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 8,
+                                        "day": null,
+                                        "year": 2023
+                                    },
+                                    "end": {
+                                        "month": null,
+                                        "day": null,
+                                        "year": null
+                                    }
+                                },
+                                "company": "Kustomer",
+                                "description": null,
+                                "title": "Customer Success Manager",
+                                "employment_type": "Full-time"
+                            }
+                        ]
+                    },
+                    {
+                        "company": {
+                            "id": null,
+                            "name": "Yuelcollective",
+                            "logo": null,
+                            "url": null,
+                            "employees": {
+                                "start": null,
+                                "end": null
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 3,
+                                "day": null,
+                                "year": 2019
+                            },
+                            "end": {
+                                "month": null,
+                                "day": null,
+                                "year": null
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 3,
+                                        "day": null,
+                                        "year": 2019
+                                    },
+                                    "end": {
+                                        "month": null,
+                                        "day": null,
+                                        "year": null
+                                    }
+                                },
+                                "company": "Yuelcollective",
+                                "description": "Yuelcollective is a combination of multi-medium artworks by yours truly. I am currently an apprentice level tattoo artist and create demand driven/sustainable/largely recycled clothing that supports local foster organizations as well. All digital content (graphic, photographic, video reels, etc) as well as web content is also created and managed by me as well",
+                                "title": "Tattoo / Multi Medium Artist ",
+                                "employment_type": null
+                            }
+                        ]
+                    },
+                    {
+                        "company": {
+                            "id": 2860994,
+                            "name": "Mavrck",
+                            "logo": "https://media.licdn.com/dms/image/C4E0BAQFCTaWsWnczqg/company-logo_400_400/0/1630581179076/mavrck_logo?e=1712793600&v=beta&t=B0cqajtGgenhWHMF4iNeeLHSkgyyRJaUbACNJS2mYy8",
+                            "url": "https://www.linkedin.com/company/mavrck/",
+                            "employees": {
+                                "start": 201,
+                                "end": 500
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 7,
+                                "day": null,
+                                "year": 2022
+                            },
+                            "end": {
+                                "month": 8,
+                                "day": null,
+                                "year": 2023
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 7,
+                                        "day": null,
+                                        "year": 2022
+                                    },
+                                    "end": {
+                                        "month": 8,
+                                        "day": null,
+                                        "year": 2023
+                                    }
+                                },
+                                "company": "Mavrck",
+                                "description": "Mavrck is the #1 influencer marketing platform for enterprise brands. We approach influencer marketing differently to activate all types of influencers across the customer experience journey to establish a ubiquitous journey of social proof - bringing results that cannot be achieved in other ways. \n\nAs a Campaigns focused Custom Success Manager, I work with our CS, Services & Sales teams to execute timely thoughtful campaigns. We utilize data driven insights to help evolve our customers long and short term marketing strategies.",
+                                "title": "Customer Success Manager, Campaigns",
+                                "employment_type": "Full-time"
+                            }
+                        ]
+                    },
+                    {
+                        "company": {
+                            "id": 3365729,
+                            "name": "Condé Nast",
+                            "logo": "https://media.licdn.com/dms/image/C4D0BAQHeOJLiS3pVGA/company-logo_400_400/0/1630578317477?e=1712793600&v=beta&t=g9NoOC_Bn7xZva7rK4PBG2UeTgycbQVtsDAdHC2pUN0",
+                            "url": "https://www.linkedin.com/company/conde-nast/",
+                            "employees": {
+                                "start": 1001,
+                                "end": 5000
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 11,
+                                "day": null,
+                                "year": 2021
+                            },
+                            "end": {
+                                "month": 7,
+                                "day": null,
+                                "year": 2022
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 11,
+                                        "day": null,
+                                        "year": 2021
+                                    },
+                                    "end": {
+                                        "month": 7,
+                                        "day": null,
+                                        "year": 2022
+                                    }
+                                },
+                                "company": "Condé Nast",
+                                "description": "Condé Nast serves as a global media company that produces some of the world's leading print, digital, video and social brands. \n\nAs a Senior Media Solutions Specialist, I am responsible for supporting the lifecycle of Key Accounts.",
+                                "title": "Senior Media Solutions Specialist",
+                                "employment_type": "Full-time"
+                            }
+                        ]
+                    },
+                    {
+                        "company": {
+                            "id": 2861211,
+                            "name": "UNiDAYS",
+                            "logo": "https://media.licdn.com/dms/image/C4D0BAQGP6wyne3u1Kg/company-logo_400_400/0/1630534247790/unidays_logo?e=1712793600&v=beta&t=ji4ckO9nK3NeQTapxSt5j8cVZ9dH2rVhTkRcYLlDBxg",
+                            "url": "https://www.linkedin.com/company/unidays/",
+                            "employees": {
+                                "start": 201,
+                                "end": 500
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 9,
+                                "day": null,
+                                "year": 2020
+                            },
+                            "end": {
+                                "month": 11,
+                                "day": null,
+                                "year": 2021
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 7,
+                                        "day": null,
+                                        "year": 2021
+                                    },
+                                    "end": {
+                                        "month": 11,
+                                        "day": null,
+                                        "year": 2021
+                                    }
+                                },
+                                "company": "UNiDAYS",
+                                "description": "UNiDAYS is the world's leading Student Affinity Network with access to over 13 million college students around the world. We provide integrated, multi-channel campaigns and solutions to help reach students to help our clients connect with Gen Z all in one platform.\n\nI owned day to day relationships and assist in the long term development of their most valuable partners, creating and executing omni-channel campaigns to deliver consistent upward growth.",
+                                "title": "Customer Success Manager",
+                                "employment_type": "Full-time"
+                            },
+                            {
+                                "location": "New York, United States",
+                                "date": {
+                                    "start": {
+                                        "month": 9,
+                                        "day": null,
+                                        "year": 2020
+                                    },
+                                    "end": {
+                                        "month": 7,
+                                        "day": null,
+                                        "year": 2021
+                                    }
+                                },
+                                "company": "UNiDAYS",
+                                "description": null,
+                                "title": "Account Coordinator",
+                                "employment_type": "Full-time"
+                            }
+                        ]
+                    },
+                    {
+                        "company": {
+                            "id": 247077,
+                            "name": "American Income Life Insurance Company",
+                            "logo": "https://media.licdn.com/dms/image/C4E0BAQFBQRhXp4EVQg/company-logo_400_400/0/1630606713701?e=1712793600&v=beta&t=xOdD8XAQTATfB4ox14WkPv6q5cbpPWUZbfc00eUJ7RU",
+                            "url": "https://www.linkedin.com/company/american-income-life/",
+                            "employees": {
+                                "start": 5001,
+                                "end": 10000
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 2,
+                                "day": null,
+                                "year": 2017
+                            },
+                            "end": {
+                                "month": 6,
+                                "day": null,
+                                "year": 2019
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "Orange County, California Area",
+                                "date": {
+                                    "start": {
+                                        "month": 2,
+                                        "day": null,
+                                        "year": 2017
+                                    },
+                                    "end": {
+                                        "month": 6,
+                                        "day": null,
+                                        "year": 2019
+                                    }
+                                },
+                                "company": "American Income Life Insurance Company",
+                                "description": null,
+                                "title": "Account Manager",
+                                "employment_type": null
+                            }
+                        ]
+                    },
+                    {
+                        "company": {
+                            "id": 128634,
+                            "name": "Talking Rain Beverage Company®",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQHhUUG3yCroHw/company-logo_400_400/0/1631398256315/talking_rain_beverage_co__logo?e=1712793600&v=beta&t=XlV6_wIzuN661c5iw8J665L3HNSTzfqGg71qDONRM4U",
+                            "url": "https://www.linkedin.com/company/talkingrain/",
+                            "employees": {
+                                "start": 201,
+                                "end": 500
+                            }
+                        },
+                        "date": {
+                            "start": {
+                                "month": 1,
+                                "day": null,
+                                "year": 2015
+                            },
+                            "end": {
+                                "month": 8,
+                                "day": null,
+                                "year": 2016
+                            }
+                        },
+                        "profile_positions": [
+                            {
+                                "location": "Greater Seattle Area",
+                                "date": {
+                                    "start": {
+                                        "month": 1,
+                                        "day": null,
+                                        "year": 2015
+                                    },
+                                    "end": {
+                                        "month": 8,
+                                        "day": null,
+                                        "year": 2016
+                                    }
+                                },
+                                "company": "Talking Rain Beverage Company®",
+                                "description": "Talking Rain focused largely on starting up influencer programming and on site events. As an assistant promoted full time from the Summer Internship Program, I assisted in launching not only the Kevin Durant x TR campaign but numerous digital campaigns as well. \n \nTeam increased CGC by 37% and organic growth by 33% during 2016-2017",
+                                "title": "Digital Marketing Assistant",
+                                "employment_type": null
+                            }
+                        ]
+                    }
+                ],
+                "volunteer_experiences": [
+                    {
+                        "date": {
+                            "start": {
+                                "month": 8,
+                                "day": null,
+                                "year": 2016
+                            },
+                            "end": {
+                                "month": 6,
+                                "day": null,
+                                "year": 2020
+                            }
+                        },
+                        "role": "CA President - International Champion",
+                        "company": {
+                            "id": null,
+                            "name": "DECA Inc.",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQHAhw7Lm_HYwg/company-logo_400_400/0/1630640135639/deca_inc__logo?e=1712793600&v=beta&t=Wx2ZMg06DDgrOK-yxbZLka9Ojsh20u7dssdE_nKT57E",
+                            "url": "https://www.linkedin.com/company/deca-inc-/"
+                        },
+                        "cause": "EDUCATION",
+                        "description": "Instructor & Program Coordinator for 50+ collegiate students in international marketing presentation competition\n2016/18/19 International Gold Medalist in the categories of: Advertising, Sales & International Marketing"
+                    },
+                    {
+                        "date": {
+                            "start": {
+                                "month": 1,
+                                "day": null,
+                                "year": 2018
+                            },
+                            "end": {
+                                "month": 12,
+                                "day": null,
+                                "year": 2019
+                            }
+                        },
+                        "role": "University Program Coordinator",
+                        "company": {
+                            "id": null,
+                            "name": "Big Brothers Big Sisters of America",
+                            "logo": "https://media.licdn.com/dms/image/D560BAQGiZ9vMz0p5Tg/company-logo_400_400/0/1688589142171/bbbsa_logo?e=1712793600&v=beta&t=OVDvL_hML04slhYlMmAzGai_Pmas80PceCkutLFzp88",
+                            "url": "https://www.linkedin.com/company/bbbsa/"
+                        },
+                        "cause": "CHILDREN",
+                        "description": "Created programming connecting collegiate students to BBBS children such as: College Tour/Counseling, Fitness Events, Speaker Panels, etc.\nRaised over $60,000 for programs with the help of an incredible team"
+                    },
+                    {
+                        "date": {
+                            "start": {
+                                "month": 5,
+                                "day": null,
+                                "year": 2014
+                            },
+                            "end": {
+                                "month": 5,
+                                "day": null,
+                                "year": 2015
+                            }
+                        },
+                        "role": "Clothing Drive Head",
+                        "company": {
+                            "id": null,
+                            "name": "Mary's Place",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQFmIHqaVmC4uw/company-logo_400_400/0/1674332862041/marys_place_logo?e=1712793600&v=beta&t=XtzVCL0t-c6Vf_UEtB_6fG9YCPt9w0kQCisTTyeEPcg",
+                            "url": "https://www.linkedin.com/company/mary's-place/"
+                        },
+                        "cause": "SOCIAL_SERVICES",
+                        "description": "Mary's Place is a shelter that supports wonderful woman and children in several different areas that they need. I decided to connect my high school with this organization and ran clothing drives at the end of summer to help support families during the upcoming harsh Seattle Winter.\n \nIn 2015, we blew past our goal and collected 4200 items in less than 2 weeks."
+                    },
+                    {
+                        "date": {
+                            "start": {
+                                "month": 1,
+                                "day": null,
+                                "year": 2015
+                            },
+                            "end": {
+                                "month": 3,
+                                "day": null,
+                                "year": 2017
+                            }
+                        },
+                        "role": "Domestic Abuse Counselor",
+                        "company": {
+                            "id": null,
+                            "name": "YWCA USA",
+                            "logo": "https://media.licdn.com/dms/image/C4D0BAQGHBPFZC66HNg/company-logo_400_400/0/1630536129713/ywca_usa_logo?e=1712793600&v=beta&t=xV7pM4EyNJcz0Z0oqsGbirO3PpwVTAybfcfvMCBBPZo",
+                            "url": "https://www.linkedin.com/company/ywca-usa/"
+                        },
+                        "cause": "SOCIAL_SERVICES",
+                        "description": "Among the many amazing things YWCA does for the community, it also provides a safe haven and resources for woman and children fleeing from domestic abuse. \nI played a role in advising both woman and teens and volunteering at the shelter when needed."
+                    },
+                    {
+                        "date": {
+                            "start": {
+                                "month": 9,
+                                "day": null,
+                                "year": 2012
+                            },
+                            "end": {
+                                "month": 4,
+                                "day": null,
+                                "year": 2014
+                            }
+                        },
+                        "role": "Youth Volunteer",
+                        "company": {
+                            "id": null,
+                            "name": "KidsQuest Children's Museum",
+                            "logo": "https://media.licdn.com/dms/image/C560BAQFBmJkoTuof3w/company-logo_400_400/0/1630610110171/kidsquestchildrensmuseum_logo?e=1712793600&v=beta&t=MglutdNNrDcQKitNpwaDKpwzFIEvvM9Zm6c6Kuu_Blw",
+                            "url": "https://www.linkedin.com/company/kidsquestchildrensmuseum/"
+                        },
+                        "cause": "CHILDREN",
+                        "description": "I spent about 10 hours a week leading hands-on activities, heighten the experience of children and families by interacting with our visitors at the exhibits, assisted the staff in workshops, camps and birthday parties, and volunteer at special events such as farmers markets. \n\nI was then hired on as a part time Guest Experience Guide."
+                    }
+                ],
+                "skills": [
+                    "Public Speaking",
+                    "Bilingualism",
+                    "Sales",
+                    "Leadership",
+                    "Accounting",
+                    "Microsoft Office",
+                    "Social Media",
+                    "Marketing",
+                    "Customer Service",
+                    "Microsoft Excel",
+                    "Microsoft Word",
+                    "PowerPoint",
+                    "Apple/PC Skills",
+                    "NAV",
+                    "Luceo",
+                    "Accounts Receivable",
+                    "Problem Solving",
+                    "Project Management",
+                    "Creative Strategy",
+                    "Advertising"
+                ],
+                "network_info": null,
+                "related_profiles": null,
+                "contact_info": null
+            }
+        ],
+        "companyDetail": {
+            "profile_type": "company",
+            "details": {
+                "name": "Kustomer",
+                "universal_name": "kustomer",
+                "company_id": 10517045,
+                "description": "Kustomer helps businesses grow by delivering exceptional customer service via phone, email, chat, text, social, messaging and more. Kustomer enables fast, personalized, and efficient customer and agent experiences using complete customer visibility, seamless omnichannel conversations, intelligent automation and easy, no-code customization to adapt to change. See why growing brands use Kustomer to build the enduring customer relationships that drive better business results at http://ow.ly/UZ5X50HV0ov",
+                "phone": null,
+                "followers": 24620,
+                "urls": {
+                    "company_page": "https://www.kustomer.com",
+                    "li_url": "https://www.linkedin.com/company/kustomer"
+                },
+                "industries": [
+                    "Software Development"
+                ],
+                "images": {
+                    "logo": "https://media.licdn.com/dms/image/C4E0BAQGFXydz_dl9mQ/company-logo_400_400/0/1630592525048/kustomer_logo?e=1712793600&v=beta&t=WMFojuI-e74qQplhYN_MdaQiKFUfoQNMXfg2xUAcxeY",
+                    "cover": "https://media.licdn.com/dms/image/D4E3DAQGLJ2IXEzpilg/image-scale_191_1128/0/1698772525704/kustomer_cover?e=1705338000&v=beta&t=Apc0TaAWkv3oULTHODaWNgTTMUhtw5vdlVAsD9QTKH8"
+                },
+                "tagline": null,
+                "founded": null,
+                "type": "Privately Held",
+                "staff": {
+                    "total": 170,
+                    "range": {
+                        "start": 201,
+                        "end": 500
+                    }
+                },
+                "call_to_action": {
+                    "url": "https://www.kustomer.com",
+                    "text": "Visit website"
+                },
+                "locations": {
+                    "headquarter": {
+                        "country": "US",
+                        "geographic_area": "NY",
+                        "city": "New York",
+                        "postal_code": "10018",
+                        "line1": "318 W 39th St.",
+                        "line2": "5th floor",
+                        "description": null
+                    },
+                    "other": [
+                        {
+                            "country": "US",
+                            "geographic_area": "NY",
+                            "city": "New York",
+                            "postal_code": "10018",
+                            "line1": "318 W 39th St.",
+                            "line2": "5th floor",
+                            "description": null
+                        },
+                        {
+                            "country": "US",
+                            "geographic_area": "North Carolina",
+                            "city": "Durham",
+                            "postal_code": "27701",
+                            "line1": null,
+                            "line2": null,
+                            "description": null
+                        },
+                        {
+                            "country": "IE",
+                            "geographic_area": null,
+                            "city": "Dublin",
+                            "postal_code": null,
+                            "line1": null,
+                            "line2": null,
+                            "description": null
+                        }
+                    ]
+                },
+                "specialities": [
+                    "customer experience",
+                    "customer service",
+                    "CRM",
+                    "CX",
+                    "SaaS",
+                    "startups"
+                ],
+                "funding_data": {
+                    "num_of_funding_rounds": 7,
+                    "last_funding_round": {
+                        "funding_type": "SERIES_UNKNOWN",
+                        "money_raised": {
+                            "currency": "USD",
+                            "amount": 60000000
+                        },
+                        "announced_on": {
+                            "month": 5,
+                            "day": 16,
+                            "year": 2023
+                        },
+                        "lead_investors": [
+                            {
+                                "name": "Battery Ventures",
+                                "logo": "https://media.licdn.com/dms/image/sync/D5638AQGapXc91fpeFg/crunchbase_investor_logo_100/0/1703701700242?e=1705338000&v=beta&t=7QHTYKw387AL0oIeeLcc-HasS2Di3O2Tl2DUVAEP7Kg",
+                                "investor_url": "https://www.crunchbase.com/organization/battery-ventures?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=investor"
+                            },
+                            {
+                                "name": "Redpoint",
+                                "logo": "https://media.licdn.com/dms/image/sync/D5638AQEly_kyaPerzw/crunchbase_investor_logo_100/0/1703701700168?e=1705338000&v=beta&t=ygqsTcaTG3UQeYgdshTRMuUsYFedZuTJpP2EOMAHpg8",
+                                "investor_url": "https://www.crunchbase.com/organization/redpoint-ventures?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=investor"
+                            }
+                        ],
+                        "num_of_other_investors": 1,
+                        "round_url": "https://www.crunchbase.com/funding_round/kustomer-series-unknown--439bf622?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=last_funding"
+                    },
+                    "organization_url": "https://www.crunchbase.com/organization/kustomer?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=profile_cta",
+                    "funding_rounds_url": "https://www.crunchbase.com/organization/kustomer/funding_rounds/funding_rounds_list?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=all_fundings"
+                },
+                "hashtags": [
+                    "cxday",
+                    "customerservice",
+                    "customerexperience"
+                ]
+            },
+            "related_companies": []
+        }
+    }
+}
