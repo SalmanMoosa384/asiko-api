@@ -33,6 +33,7 @@ const prospectController = async function (reqBody) {
             if (count == limit) {
               break;
             }
+            else{
             let profileDetail = await getProfile(
               profile.profile_id,
               "personal"
@@ -51,6 +52,7 @@ const prospectController = async function (reqBody) {
             } else {
               break;
             }
+          }
           }
         })
       );
