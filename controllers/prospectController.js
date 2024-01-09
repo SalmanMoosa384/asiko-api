@@ -46,10 +46,9 @@ const prospectController = async function (reqBody) {
                 );
               });
             if (getCurrentCompanyPosition.length > 0) {
-              count++;
+              count = count + 1;
               responseDetail.profiles.push(profileDetail.data);
             } else {
-              count--;
               break;
             }
           }

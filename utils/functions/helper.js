@@ -36,18 +36,19 @@ const sortByTitle = (profiles, desiredOrder) => {
     const titleA = a.sub_title.toLowerCase();
     const titleB = b.sub_title.toLowerCase();
 
-    const includesTitleA = titleA.includes(title);
-    const includesTitleB = titleB.includes(title);
+    const startsWithTitleA = titleA.startsWith(title);
+    const startsWithTitleB = titleB.startsWith(title);
 
-    if (includesTitleA && !includesTitleB) {
+    if (startsWithTitleA && !startsWithTitleB) {
       return -1; // Move profile A up
-    } else if (!includesTitleA && includesTitleB) {
+    } else if (!startsWithTitleA && startsWithTitleB) {
       return 1; // Move profile B up
     } else {
-      return 0; // Maintain order for profiles with and without the specified title
+      return 0; // Maintain order for profiles with and without the specified title at the beginning
     }
   });
 };
+
 
 module.exports = {
   extractCompanyIdFromUrl: extractCompanyIdFromUrl,
