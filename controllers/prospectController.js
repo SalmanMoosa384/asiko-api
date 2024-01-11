@@ -50,7 +50,8 @@ const prospectController = async function (reqBody) {
             profileDetail.data.position_groups.filter((prof) => {
               return (
                 prof.company.id == companyId &&
-                prof.profile_positions[0].title.toLocaleLowerCase().trim().includes(jobtitle.toLocaleLowerCase().trim())
+                prof.profile_positions[0].title.toLocaleLowerCase().trim() ==
+                  jobtitle.toLocaleLowerCase().trim()
               );
             });
           if (getCurrentCompanyPosition.length > 0) {
