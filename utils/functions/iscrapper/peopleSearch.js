@@ -2,7 +2,7 @@ const axios = require("axios");
 module.exports = async function (
   companyId,
   currentJobTitle,
-  limit = 10,
+  limit = 20,
   offset = 0
 ) {
   try {

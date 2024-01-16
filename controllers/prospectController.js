@@ -129,7 +129,8 @@ const prospectController = async function (reqBody) {
                     prof.company.id == companyId &&
                     prof.profile_positions[0].title
                       .toLocaleLowerCase()
-                      .trim() == jobtitle.toLocaleLowerCase().trim()
+                      .trim()
+                      .startsWith(jobtitle.toLocaleLowerCase().trim())
                   );
                 });
               if (getCurrentCompanyPosition.length > 0) {
