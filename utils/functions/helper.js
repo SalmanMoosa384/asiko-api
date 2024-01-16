@@ -49,7 +49,6 @@ const sortByTitle = (profiles, desiredOrder) => {
   });
 };
 
-
 module.exports = {
   extractCompanyIdFromUrl: extractCompanyIdFromUrl,
   iScrapperLimit: iScrapperLimit,
