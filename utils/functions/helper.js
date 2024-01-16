@@ -1,4 +1,4 @@
-const extractCompanyIdFromUrl = (url) => {
+const extractIdFromUrl = (url) => {
   const urlParts = url.split("/");
   const filteredParts = urlParts.filter((part) => part.trim() !== "");
   const companyId = filteredParts[filteredParts.length - 1];
@@ -50,7 +50,7 @@ const sortByTitle = (profiles, desiredOrder) => {
 };
 
 module.exports = {
-  extractCompanyIdFromUrl: extractCompanyIdFromUrl,
+  extractIdFromUrl: extractIdFromUrl,
   iScrapperLimit: iScrapperLimit,
   iScraperOffset: iScraperOffset,
   sortByTitle: sortByTitle,

@@ -6,10 +6,14 @@ const serpResponse = require("../utils/functions/brightdata/serpResponse");
 
 const prospectController = async function (reqBody) {
   if (reqBody?.jobTitles && reqBody?.companylinkedinURL) {
-    reqBody.companylinkedinURL = helpers.extractCompanyIdFromUrl(
+    reqBody.companylinkedinURL = helpers.extractIdFromUrl(
       reqBody.companylinkedinURL
     );
     let limit = reqBody?.limit ? reqBody.limit : 1;
+
+    reqBody.jobTitles = reqBody.jobTitles.map((element) =>
+      element.toLowerCase()
+    );
 
     if (limit > 20) {
       return { success: false, data: "limit allow between 1 to 20" };
@@ -43,22 +47,37 @@ const prospectController = async function (reqBody) {
                 if (count >= limit) {
                   break;
                 }
-                let profileLink =
-                  profile.link.split("/")[profile.link.split("/").length - 1];
+                if (
+                  reqBody.jobTitles.filter((k) =>
+                    profile.title
+                      .split("-")[1]
+                      .trim()
+                      .toLowerCase()
+                      .startsWith(k)
+                  ).length > 0
+                ) {
+                  let profileLink = helpers.extractIdFromUrl(profile.link);
 
-                let profileDetail = await getProfile(profileLink, "personal");
+                  let profileDetail = await getProfile(profileLink, "personal");
 
-                let getCurrentCompanyPosition =
-                  profileDetail.data.position_groups.filter((prof) => {
-                    return prof.company.id == companyId;
-                  });
-                if (getCurrentCompanyPosition.length > 0) {
-                  profileIds.push(profileLink);
+                  let getCurrentCompanyPosition =
+                    profileDetail.data.position_groups.filter((prof) => {
+                      return prof.company.id == companyId;
+                    });
+                  if (getCurrentCompanyPosition.length > 0) {
+                    profileIds.push(profileLink);
 
-                  console.log("serp", profileLink, count, limit, count < limit);
+                    console.log(
+                      "serp",
+                      profileLink,
+                      count,
+                      limit,
+                      count < limit
+                    );
 
-                  count = count + 1;
-                  responseDetail.profiles.push(profileDetail.data);
+                    count = count + 1;
+                    responseDetail.profiles.push(profileDetail.data);
+                  }
                 }
               }
             }
