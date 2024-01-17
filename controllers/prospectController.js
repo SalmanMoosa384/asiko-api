@@ -75,12 +75,10 @@ const prospectController = async function (reqBody) {
                         return (
                           prof.company.id == companyId &&
                           reqBody.jobTitles.filter((k) =>
-                            k.startsWith(
-                              prof.profile_positions[0].title
-                                .toLocaleLowerCase()
-                                .trim()
-                            )
-                          ).length > 0
+                            prof.profile_positions[0].title
+                              .toLocaleLowerCase()
+                              .trim()
+                          )
                         );
                       });
                     if (getCurrentCompanyPosition.length > 0) {
@@ -143,8 +141,7 @@ const prospectController = async function (reqBody) {
                       prof.company.id == companyId &&
                       prof.profile_positions[0].title
                         .toLocaleLowerCase()
-                        .trim()
-                        .startsWith(jobtitle)
+                        .trim() == jobtitle
                     );
                   });
                 if (getCurrentCompanyPosition) {
