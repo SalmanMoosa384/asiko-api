@@ -12,7 +12,7 @@ const prospectController = async function (reqBody) {
     let limit = reqBody?.limit ? reqBody.limit : 1;
 
     reqBody.jobTitles = reqBody.jobTitles.map((element) =>
-      element.toLowerCase()
+      element.toLowerCase().trim()
     );
 
     if (limit > 20) {
@@ -40,9 +40,9 @@ const prospectController = async function (reqBody) {
           let brightDataResponse = await serpResponse(
             brightdataResponseID.responseId
           );
-          console.log(brightdataResponseID);
+          console.log("brightdata", brightdataResponseID);
           if (brightDataResponse.success) {
-            console.log("brightada");
+            console.log("brightdata success");
             if (brightDataResponse.data?.organic?.length > 0) {
               for (const profile of brightDataResponse.data.organic) {
                 if (count >= limit) {
@@ -64,18 +64,21 @@ const prospectController = async function (reqBody) {
                   if (profileDetail.success) {
                     let getCurrentCompanyPosition =
                       profileDetail.data.position_groups.filter((prof) => {
-                        return prof.company.id == companyId;
+                        return (
+                          prof.company.id == companyId &&
+                          reqBody.jobTitles.filter((k) =>
+                            k.startsWith(
+                              prof.profile_positions[0].title
+                                .toLocaleLowerCase()
+                                .trim()
+                            )
+                          ).length > 0
+                        );
                       });
                     if (getCurrentCompanyPosition.length > 0) {
                       profileIds.push(profileLink);
 
-                      console.log(
-                        "serp",
-                        profileLink,
-                        count,
-                        limit,
-                        count < limit
-                      );
+                      console.log("scrape from serp", profileLink);
 
                       count = count + 1;
                       responseDetail.profiles.push(profileDetail.data);
@@ -102,46 +105,44 @@ const prospectController = async function (reqBody) {
             jobtitle,
             helpers.iScrapperLimit(limit)
           );
-          peopleSearchData.data.results = helpers.sortByTitle(
-            peopleSearchData.data.results,
-            jobtitle
-          );
 
-          for (const profile of peopleSearchData.data.results) {
-            if (count >= limit) {
-              break;
-            }
+          if (peopleSearchData.data.results.length > 0) {
+            console.log("iscrapper people found");
 
-            if (!profileIds.includes(profile.profile_id)) {
-              let profileDetail = await getProfile(
-                profile.profile_id,
-                "personal"
-              );
-              console.log(
-                "iscrapper",
-                profile.profile_id,
-                count,
-                limit,
-                jobtitle,
-                count < limit
-              );
+            peopleSearchData.data.results = helpers.sortByTitle(
+              peopleSearchData.data.results,
+              jobtitle
+            );
 
-              let getCurrentCompanyPosition =
-                profileDetail.data.position_groups.filter((prof) => {
-                  return (
-                    prof.company.id == companyId &&
-                    prof.profile_positions[0].title
-                      .toLocaleLowerCase()
-                      .trim()
-                      .startsWith(jobtitle.toLocaleLowerCase().trim())
-                  );
-                });
-              if (getCurrentCompanyPosition.length > 0) {
-                count = count + 1;
-                profileIds.push(profile.profile_id);
-                responseDetail.profiles.push(profileDetail.data);
-              } else {
+            for (const profile of peopleSearchData.data.results) {
+              if (count >= limit) {
                 break;
+              }
+
+              if (!profileIds.includes(profile.profile_id)) {
+                let profileDetail = await getProfile(
+                  profile.profile_id,
+                  "personal"
+                );
+                console.log("scrape from iscrapper", profile.profile_id);
+
+                let getCurrentCompanyPosition =
+                  profileDetail.data.position_groups.filter((prof) => {
+                    return (
+                      prof.company.id == companyId &&
+                      prof.profile_positions[0].title
+                        .toLocaleLowerCase()
+                        .trim()
+                        .startsWith(jobtitle.toLocaleLowerCase().trim())
+                    );
+                  });
+                if (getCurrentCompanyPosition.length > 0) {
+                  count = count + 1;
+                  profileIds.push(profile.profile_id);
+                  responseDetail.profiles.push(profileDetail.data);
+                } else {
+                  break;
+                }
               }
             }
           }
