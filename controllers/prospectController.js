@@ -72,16 +72,7 @@ const prospectController = async function (reqBody) {
                   if (profileDetail.success) {
                     let getCurrentCompanyPosition =
                       profileDetail.data.position_groups.filter((prof) => {
-                        return (
-                          prof.company.id == companyId &&
-                          reqBody.jobTitles.filter((k) =>
-                            k.startsWith(
-                              prof.profile_positions[0].title
-                                .toLocaleLowerCase()
-                                .trim()
-                            )
-                          ).length > 0
-                        );
+                        return prof.company.id == companyId;
                       });
                     if (getCurrentCompanyPosition.length > 0) {
                       profileIds.push(profileLink);
@@ -144,7 +135,10 @@ const prospectController = async function (reqBody) {
                         .startsWith(jobtitle.toLocaleLowerCase().trim())
                     );
                   });
-                  console.log("getCurrentCompanyPosition",getCurrentCompanyPosition.length)
+                console.log(
+                  "getCurrentCompanyPosition",
+                  getCurrentCompanyPosition.length
+                );
                 if (getCurrentCompanyPosition.length > 0) {
                   count = count + 1;
                   profileIds.push(profile.profile_id);
