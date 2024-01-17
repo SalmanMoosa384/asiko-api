@@ -48,7 +48,7 @@ const prospectController = async function (reqBody) {
           let brightDataResponse = await serpResponse(
             brightdataResponseID.responseId
           );
-          console.log("brightdata", brightdataResponseID);
+          console.log("brightdata", brightdataResponseID,brightDataResponse);
           if (brightDataResponse.success) {
             console.log("brightdata success");
             if (brightDataResponse.data?.organic?.length > 0) {
