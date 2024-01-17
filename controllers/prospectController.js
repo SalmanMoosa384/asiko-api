@@ -131,7 +131,7 @@ const prospectController = async function (reqBody) {
                   profile.profile_id,
                   "personal"
                 );
-                console.log("scrape from iscrapper", profile.profile_id);
+                console.log("scrape from iscrapper",jobtitle, profile.profile_id);
 
                 let getCurrentCompanyPosition =
                   profileDetail.data.position_groups.filter((prof) => {
