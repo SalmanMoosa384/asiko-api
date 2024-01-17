@@ -74,10 +74,14 @@ const prospectController = async function (reqBody) {
                       profileDetail.data.position_groups.filter((prof) => {
                         return (
                           prof.company.id == companyId &&
-                          reqBody.jobTitles.filter((k) =>
-                            prof.profile_positions[0].title
-                              .toLocaleLowerCase()
-                              .trim()
+                          reqBody.jobTitles.filter(
+                            (k) =>
+                              prof.profile_positions[0].title
+                                .toLocaleLowerCase()
+                                .trim()
+                                .startsWith(k) &&
+                              prof.date.end.month == null &&
+                              prof.date.end.year == null
                           )
                         );
                       });
@@ -129,11 +133,6 @@ const prospectController = async function (reqBody) {
                   profile.profile_id,
                   "personal"
                 );
-                console.log(
-                  "scrape from iscrapper",
-                  jobtitle,
-                  profile.profile_id
-                );
 
                 let getCurrentCompanyPosition =
                   profileDetail.data.position_groups.filter((prof) => {
@@ -141,10 +140,18 @@ const prospectController = async function (reqBody) {
                       prof.company.id == companyId &&
                       prof.profile_positions[0].title
                         .toLocaleLowerCase()
-                        .trim() == jobtitle
+                        .trim()
+                        .startsWith(jobtitle) &&
+                      prof.date.end.month == null &&
+                      prof.date.end.year == null
                     );
                   });
-                if (getCurrentCompanyPosition) {
+                if (getCurrentCompanyPosition.length > 0) {
+                  console.log(
+                    "scrape from iscrapper",
+                    jobtitle,
+                    profile.profile_id
+                  );
                   count = count + 1;
                   profileIds.push(profile.profile_id);
                   responseDetail.profiles.push(profileDetail.data);
