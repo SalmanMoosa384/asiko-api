@@ -11,9 +11,11 @@ const prospectController = async function (reqBody) {
     );
     let limit = reqBody?.limit ? reqBody.limit : 1;
 
-    reqBody.jobTitles=reqBody.jobTitles.filter((k)=>k!='' && k!=null && k!="");
-    if(!reqBody.jobTitles.length){
-      console.log({success: false, data: "job title is missing"})
+    reqBody.jobTitles = reqBody.jobTitles.filter(
+      (k) => k != "" && k != null && k != ""
+    );
+    if (!reqBody.jobTitles.length) {
+      console.log({ success: false, data: "job title is missing" });
       return { success: false, data: "job title is missing" };
     }
     reqBody.jobTitles = reqBody.jobTitles.map((element) =>
@@ -23,9 +25,7 @@ const prospectController = async function (reqBody) {
     if (limit > 20) {
       return { success: false, data: "limit allow between 1 to 20" };
     }
-    
-    console.log(reqBody.jobTitles);
-    return reqBody.jobTitles;
+
     let count = 0;
     let responseDetail = { profiles: [] };
     let profileIds = [];
@@ -113,7 +113,7 @@ const prospectController = async function (reqBody) {
             jobtitle,
             helpers.iScrapperLimit(limit)
           );
-            console.log(peopleSearchData)
+          console.log(peopleSearchData);
           if (peopleSearchData.data.results.length > 0) {
             console.log("iscrapper people found");
 
