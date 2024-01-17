@@ -32,7 +32,7 @@ const prospectController = async function (reqBody) {
     let searchResult;
     let companyDetail = await getProfile(reqBody.companylinkedinURL, "company");
 
-    if (companyDetail?.data?.profile_type) {
+    if (companyDetail?.data?.profile_type && companyDetail.success) {
       responseDetail.companyDetail = companyDetail.data;
       let findDirectFromIscrapper = false;
       if (!findDirectFromIscrapper) {
@@ -116,8 +116,7 @@ const prospectController = async function (reqBody) {
             helpers.iScrapperLimit(limit)
           );
 
-          console.log("peopleSearchData",peopleSearchData);
-          if (peopleSearchData.data.results.length > 0) {
+          if (peopleSearchData.success) {
             console.log("iscrapper people found");
             peopleSearchData.data.results = helpers.sortByTitle(
               peopleSearchData.data.results,
@@ -136,29 +135,31 @@ const prospectController = async function (reqBody) {
                   "personal"
                 );
 
-                let getCurrentCompanyPosition =
-                  profileDetail.data.position_groups.filter((prof) => {
-                    return (
-                      prof.company.id == companyId &&
-                      prof.profile_positions[0].title
-                        .toLocaleLowerCase()
-                        .trim()
-                        .startsWith(jobtitle) &&
-                      prof.date.end.month == null &&
-                      prof.date.end.year == null
+                if (profileDetail.success) {
+                  let getCurrentCompanyPosition =
+                    profileDetail.data.position_groups.filter((prof) => {
+                      return (
+                        prof.company.id == companyId &&
+                        prof.profile_positions[0].title
+                          .toLocaleLowerCase()
+                          .trim()
+                          .startsWith(jobtitle) &&
+                        prof.date.end.month == null &&
+                        prof.date.end.year == null
+                      );
+                    });
+                  if (getCurrentCompanyPosition.length > 0) {
+                    console.log(
+                      "scrape from iscrapper",
+                      jobtitle,
+                      profile.profile_id
                     );
-                  });
-                if (getCurrentCompanyPosition.length > 0) {
-                  console.log(
-                    "scrape from iscrapper",
-                    jobtitle,
-                    profile.profile_id
-                  );
-                  count = count + 1;
-                  profileIds.push(profile.profile_id);
-                  responseDetail.profiles.push(profileDetail.data);
-                } else {
-                  break;
+                    count = count + 1;
+                    profileIds.push(profile.profile_id);
+                    responseDetail.profiles.push(profileDetail.data);
+                  } else {
+                    break;
+                  }
                 }
               }
             }
@@ -166,7 +167,7 @@ const prospectController = async function (reqBody) {
         }
       }
     } else {
-      return { success: false, data: "company not found" };
+      return companyDetail;
     }
 
     return { success: true, data: responseDetail };
