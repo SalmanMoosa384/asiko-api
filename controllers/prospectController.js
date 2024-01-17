@@ -13,6 +13,7 @@ const prospectController = async function (reqBody) {
 
     reqBody.jobTitles=reqBody.jobTitles.filter((k)=>k!='' && k!=null && k!="");
     if(!reqBody.jobTitles.length){
+      console.log({success: false, data: "job title is missing"})
       return { success: false, data: "job title is missing" };
     }
     reqBody.jobTitles = reqBody.jobTitles.map((element) =>
