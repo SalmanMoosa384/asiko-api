@@ -113,10 +113,8 @@ const prospectController = async function (reqBody) {
             jobtitle,
             helpers.iScrapperLimit(limit)
           );
-          console.log("peopleSearchData",peopleSearchData)
           if (peopleSearchData.data.results.length > 0) {
             console.log("iscrapper people found");
-
             peopleSearchData.data.results = helpers.sortByTitle(
               peopleSearchData.data.results,
               jobtitle
@@ -128,6 +126,7 @@ const prospectController = async function (reqBody) {
               }
 
               if (!profileIds.includes(profile.profile_id)) {
+                await new Promise((resolve) => setTimeout(resolve, 800)); 
                 let profileDetail = await getProfile(
                   profile.profile_id,
                   "personal"
