@@ -40,8 +40,9 @@ const prospectController = async function (reqBody) {
           let brightDataResponse = await serpResponse(
             brightdataResponseID.responseId
           );
-
+          console.log(brightdataResponseID);
           if (brightDataResponse.success) {
+            console.log("brightada");
             if (brightDataResponse.data?.organic?.length > 0) {
               for (const profile of brightDataResponse.data.organic) {
                 if (count >= limit) {
@@ -57,26 +58,28 @@ const prospectController = async function (reqBody) {
                   ).length > 0
                 ) {
                   let profileLink = helpers.extractIdFromUrl(profile.link);
-
+                  profileLink = profileLink.split("?")[0];
                   let profileDetail = await getProfile(profileLink, "personal");
 
-                  let getCurrentCompanyPosition =
-                    profileDetail.data.position_groups.filter((prof) => {
-                      return prof.company.id == companyId;
-                    });
-                  if (getCurrentCompanyPosition.length > 0) {
-                    profileIds.push(profileLink);
+                  if (profileDetail.success) {
+                    let getCurrentCompanyPosition =
+                      profileDetail.data.position_groups.filter((prof) => {
+                        return prof.company.id == companyId;
+                      });
+                    if (getCurrentCompanyPosition.length > 0) {
+                      profileIds.push(profileLink);
 
-                    console.log(
-                      "serp",
-                      profileLink,
-                      count,
-                      limit,
-                      count < limit
-                    );
+                      console.log(
+                        "serp",
+                        profileLink,
+                        count,
+                        limit,
+                        count < limit
+                      );
 
-                    count = count + 1;
-                    responseDetail.profiles.push(profileDetail.data);
+                      count = count + 1;
+                      responseDetail.profiles.push(profileDetail.data);
+                    }
                   }
                 }
               }
