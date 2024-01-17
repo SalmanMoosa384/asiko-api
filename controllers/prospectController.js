@@ -26,6 +26,10 @@ const prospectController = async function (reqBody) {
       return { success: false, data: "limit allow between 1 to 20" };
     }
 
+    console.log("reqBody",reqBody.jobTitles.filter((k) =>
+            k.startsWith("content")
+          ).length);
+    return;
     let count = 0;
     let responseDetail = { profiles: [] };
     let profileIds = [];
@@ -50,13 +54,7 @@ const prospectController = async function (reqBody) {
           );
           console.log("brightdata", brightdataResponseID);
           if (brightDataResponse.success) {
-            console.log("reqBody",reqBody.jobTitles.filter((k) =>
-            k.startsWith(
-              prof.profile_positions[0].title
-                .toLocaleLowerCase()
-                .trim()
-            )
-          ).length);
+            
             console.log("brightdata success");
             if (brightDataResponse.data?.organic?.length > 0) {
               for (const profile of brightDataResponse.data.organic) {
