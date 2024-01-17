@@ -33,8 +33,8 @@ const sortByTitle = (profiles, desiredOrder) => {
   const title = desiredOrder.trim().toLowerCase();
 
   return profiles.sort((a, b) => {
-    const titleA = a.sub_title.toLowerCase();
-    const titleB = b.sub_title.toLowerCase();
+    const titleA = a.position_groups[0].profile_positions[0].title.toLowerCase();
+    const titleB = b.position_groups[0].profile_positions[0].title.toLowerCase();
 
     const startsWithTitleA = titleA.startsWith(title);
     const startsWithTitleB = titleB.startsWith(title);

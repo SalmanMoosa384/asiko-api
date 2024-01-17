@@ -107,7 +107,7 @@ const prospectController = async function (reqBody) {
           }
 
           let companyId = companyDetail.data.details.company_id;
-
+          await new Promise((resolve) => setTimeout(resolve, 500)); 
           let peopleSearchData = await peopleSearch(
             companyId,
             jobtitle,
@@ -126,7 +126,7 @@ const prospectController = async function (reqBody) {
               }
 
               if (!profileIds.includes(profile.profile_id)) {
-                await new Promise((resolve) => setTimeout(resolve, 800)); 
+                await new Promise((resolve) => setTimeout(resolve, 500)); 
                 let profileDetail = await getProfile(
                   profile.profile_id,
                   "personal"
