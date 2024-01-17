@@ -44,11 +44,11 @@ const prospectController = async function (reqBody) {
 
         let brightdataResponseID = await serpRequest(serpQuery);
         if (brightdataResponseID.success) {
-          await new Promise((resolve) => setTimeout(resolve, 7000));
+          await new Promise((resolve) => setTimeout(resolve, 6000));
           let brightDataResponse = await serpResponse(
             brightdataResponseID.responseId
           );
-          console.log("brightdata", brightdataResponseID,brightDataResponse);
+          console.log("brightdata", brightdataResponseID, brightDataResponse);
           if (brightDataResponse.success) {
             console.log("brightdata success");
             if (brightDataResponse.data?.organic?.length > 0) {
@@ -107,7 +107,7 @@ const prospectController = async function (reqBody) {
           }
 
           let companyId = companyDetail.data.details.company_id;
-          await new Promise((resolve) => setTimeout(resolve, 500)); 
+          await new Promise((resolve) => setTimeout(resolve, 300));
           let peopleSearchData = await peopleSearch(
             companyId,
             jobtitle,
@@ -126,12 +126,16 @@ const prospectController = async function (reqBody) {
               }
 
               if (!profileIds.includes(profile.profile_id)) {
-                await new Promise((resolve) => setTimeout(resolve, 500)); 
+                await new Promise((resolve) => setTimeout(resolve, 300));
                 let profileDetail = await getProfile(
                   profile.profile_id,
                   "personal"
                 );
-                console.log("scrape from iscrapper",jobtitle, profile.profile_id);
+                console.log(
+                  "scrape from iscrapper",
+                  jobtitle,
+                  profile.profile_id
+                );
 
                 let getCurrentCompanyPosition =
                   profileDetail.data.position_groups.filter((prof) => {
@@ -140,10 +144,10 @@ const prospectController = async function (reqBody) {
                       prof.profile_positions[0].title
                         .toLocaleLowerCase()
                         .trim()
-                        .startsWith(jobtitle.toLocaleLowerCase().trim())
+                        .startsWith(jobtitle)
                     );
                   });
-                if (getCurrentCompanyPosition.length > 0) {
+                if (getCurrentCompanyPosition) {
                   count = count + 1;
                   profileIds.push(profile.profile_id);
                   responseDetail.profiles.push(profileDetail.data);
