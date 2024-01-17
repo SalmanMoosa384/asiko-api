@@ -48,9 +48,8 @@ const prospectController = async function (reqBody) {
           let brightDataResponse = await serpResponse(
             brightdataResponseID.responseId
           );
-          console.log("brightdata", brightdataResponseID, brightDataResponse);
+          console.log("brightdata", brightdataResponseID);
           if (brightDataResponse.success) {
-            console.log("brightdata success");
             if (brightDataResponse.data?.organic?.length > 0) {
               for (const profile of brightDataResponse.data.organic) {
                 if (count >= limit) {
@@ -117,7 +116,6 @@ const prospectController = async function (reqBody) {
           );
 
           if (peopleSearchData.success) {
-            console.log("iscrapper people found");
             peopleSearchData.data.results = helpers.sortByTitle(
               peopleSearchData.data.results,
               jobtitle
