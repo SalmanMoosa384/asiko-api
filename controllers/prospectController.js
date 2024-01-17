@@ -105,7 +105,7 @@ const prospectController = async function (reqBody) {
             jobtitle,
             helpers.iScrapperLimit(limit)
           );
-
+            console.log(peopleSearchData)
           if (peopleSearchData.data.results.length > 0) {
             console.log("iscrapper people found");
 
