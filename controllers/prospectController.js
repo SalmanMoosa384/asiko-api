@@ -18,6 +18,8 @@ const prospectController = async function (reqBody) {
     if (limit > 20) {
       return { success: false, data: "limit allow between 1 to 20" };
     }
+    console.log(jobTitles);
+    return jobTitles;
     let count = 0;
     let responseDetail = { profiles: [] };
     let profileIds = [];
