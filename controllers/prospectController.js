@@ -28,9 +28,9 @@ const prospectController = async function (reqBody) {
       responseDetail.companyDetail = companyDetail.data;
       let findDirectFromIscrapper = false;
       if (!findDirectFromIscrapper) {
-        let serpQuery = `site:linkedin.com/in/ AND intitle:|${
+        let serpQuery = `site:linkedin.com/in/ AND intitle:" - ${
           companyDetail.data.details.name
-        } AND (intitle:"${reqBody.jobTitles.join('" OR intitle:"')}")`;
+        }" AND (intitle:"${reqBody.jobTitles.join('" OR intitle:"')}")`;
 
         let companyId = companyDetail.data.details.company_id;
 
