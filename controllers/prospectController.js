@@ -44,7 +44,7 @@ const prospectController = async function (reqBody) {
 
         let brightdataResponseID = await serpRequest(serpQuery);
         if (brightdataResponseID.success) {
-          await new Promise((resolve) => setTimeout(resolve, 7000));
+          await new Promise((resolve) => setTimeout(resolve, 4000));
           let brightDataResponse = await serpResponse(
             brightdataResponseID.responseId
           );
@@ -144,7 +144,6 @@ const prospectController = async function (reqBody) {
                         .startsWith(jobtitle.toLocaleLowerCase().trim())
                     );
                   });
-                  console.log("getCurrentCompanyPosition",getCurrentCompanyPosition.length)
                 if (getCurrentCompanyPosition.length > 0) {
                   count = count + 1;
                   profileIds.push(profile.profile_id);
