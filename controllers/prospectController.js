@@ -44,7 +44,7 @@ const prospectController = async function (reqBody) {
 
         let brightdataResponseID = await serpRequest(serpQuery);
         if (brightdataResponseID.success) {
-          await new Promise((resolve) => setTimeout(resolve, 4000));
+          await new Promise((resolve) => setTimeout(resolve, 7000));
           let brightDataResponse = await serpResponse(
             brightdataResponseID.responseId
           );
@@ -113,7 +113,6 @@ const prospectController = async function (reqBody) {
             jobtitle,
             helpers.iScrapperLimit(limit)
           );
-          console.log(peopleSearchData);
           if (peopleSearchData.data.results.length > 0) {
             console.log("iscrapper people found");
 
