@@ -50,6 +50,13 @@ const prospectController = async function (reqBody) {
           );
           console.log("brightdata", brightdataResponseID);
           if (brightDataResponse.success) {
+            console.log("reqBody",reqBody.jobTitles.filter((k) =>
+            k.startsWith(
+              prof.profile_positions[0].title
+                .toLocaleLowerCase()
+                .trim()
+            )
+          ).length);
             console.log("brightdata success");
             if (brightDataResponse.data?.organic?.length > 0) {
               for (const profile of brightDataResponse.data.organic) {
