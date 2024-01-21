@@ -3,6 +3,7 @@ const peopleSearch = require("../utils/functions/iscrapper/peopleSearch");
 const helpers = require("../utils/functions/helper");
 const serpRequest = require("../utils/functions/brightdata/serpRequest");
 const serpResponse = require("../utils/functions/brightdata/serpResponse");
+const querySelect = require("../utils/functions/postgreSQL/querySelect");
 
 const prospectController = async function (reqBody) {
   if (reqBody?.jobTitles && reqBody?.companylinkedinURL) {
@@ -30,17 +31,41 @@ const prospectController = async function (reqBody) {
     let responseDetail = { profiles: [] };
     let profileIds = [];
     let searchResult;
-    let companyDetail = await getProfile(reqBody.companylinkedinURL, "company");
+    let companyFromCache = false;
 
-    if (companyDetail?.data?.profile_type && companyDetail.success) {
-      responseDetail.companyDetail = companyDetail.data;
+    let companyDetail = await querySelect(
+      "linkedin_companies",
+      `where public_id='${reqBody.companylinkedinURL}'`
+    ).then((res) => {
+      if (res.success) {
+        console.log("Company found from cache");
+        companyFromCache = true;
+        res.data[0].success = true;
+        return res.data[0];
+      }
+    });
+
+    if (!companyFromCache) {
+      console.log("company not found");
+      companyDetail = await getProfile(reqBody.companylinkedinURL, "company");
+      if (companyDetail.success) {
+        companyDetail = await helpers.companyDataDestructure(
+          companyDetail.data,
+          "iscrapper"
+        );
+        console.log("Company found from iscrapper");
+      }
+    }
+
+    if (companyDetail.success) {
+      responseDetail.companyDetail = companyDetail;
       let findDirectFromIscrapper = false;
       if (!findDirectFromIscrapper) {
         let serpQuery = `site:linkedin.com/in/ AND intitle:|${
-          companyDetail.data.details.name
+          companyDetail.company_name
         } AND (intitle:"${reqBody.jobTitles.join('" OR intitle:"')}")`;
 
-        let companyId = companyDetail.data.details.company_id;
+        let companyId = companyDetail.linkedin_uid;
 
         let brightdataResponseID = await serpRequest(serpQuery);
         if (brightdataResponseID.success) {
@@ -107,7 +132,7 @@ const prospectController = async function (reqBody) {
             break;
           }
 
-          let companyId = companyDetail.data.details.company_id;
+          let companyId = companyDetail.linkedin_uid;
           await new Promise((resolve) => setTimeout(resolve, 500));
           let peopleSearchData = await peopleSearch(
             companyId,
@@ -165,7 +190,7 @@ const prospectController = async function (reqBody) {
         }
       }
     } else {
-      return companyDetail;
+      return { success: false, data: companyDetail };
     }
 
     return { success: true, data: responseDetail };
