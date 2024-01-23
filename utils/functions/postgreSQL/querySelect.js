@@ -15,7 +15,6 @@ module.exports = async function (tableName, condition) {
     if (result.rows.length > 0) {
       return { data: result.rows, success: true };
     }
-
     return { data: result.rows, success: false };
   } catch (error) {
     return { data: error, success: false };

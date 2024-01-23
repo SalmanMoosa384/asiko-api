@@ -29,6 +29,18 @@ const iScraperOffset = (count, limit = 20) => {
   }
 };
 
+const generateUUID = () => {
+  let uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+    /[xy]/g,
+    function (c) {
+      let r = (Math.random() * 16) | 0,
+        v = c === "x" ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    }
+  );
+  return uuid;
+};
+
 const sortByTitle = (profiles, desiredOrder) => {
   const title = desiredOrder.trim().toLowerCase();
 
@@ -47,6 +59,79 @@ const sortByTitle = (profiles, desiredOrder) => {
       return 0; // Maintain order for profiles with and without the specified title at the beginning
     }
   });
+};
+
+const profileDataDestructure = (obj, dataSource) => {
+  if (dataSource == "iscrapper") {
+    let profileObj = {};
+    profileObj.id = generateUUID(); // uuid
+    profileObj.url = `https://linkedin.com/in/${obj.profile_id}/`;
+    profileObj.public_id = obj.profile_id;
+    profileObj.linkedin_uid = obj.entity_urn;
+    profileObj.full_name = `${obj.first_name} ${obj.last_name}`;
+    profileObj.headline = obj.sub_title;
+    profileObj.summary = obj.summary;
+    profileObj.image_url = obj.profile_picture;
+    profileObj.location = obj.location.default;
+
+    let employments = [];
+    obj.position_groups.map((i) => {
+      let employeeObject = {};
+      employeeObject.role_name = i.profile_positions[0].title;
+      employeeObject.company_uid = i.company.id;
+      employeeObject.company_name = i.company.name;
+      employeeObject.role_end_date = i.date.end.year
+        ? `${i.date.end.year}-${i.date.end.month}`
+        : null;
+      employeeObject.role_location = i.profile_positions[0].location;
+      employeeObject.role_start_date = i.date.start.year
+        ? `${i.date.start.year}-${i.date.start.month}`
+        : null;
+      employeeObject.activeEmployment = i.date.end.year ? false : true;
+      employeeObject.role_description = i.profile_positions[0].description;
+      employeeObject.role_employment_type =
+        i.profile_positions[0].employment_type;
+      employments.push(employeeObject);
+    });
+
+    // JSON.stringify(employments)
+
+    profileObj.employments = employments;
+    profileObj.industry = obj.industry;
+    profileObj.skills = obj.skills;
+    profileObj.scraped_at = currentTimeForPOSTGESQL();
+    profileObj.created_at = currentTimeForPOSTGESQL();
+    profileObj.updated_at = currentTimeForPOSTGESQL();
+    profileObj.first_name = obj.first_name;
+    profileObj.last_name = obj.last_name;
+    profileObj.premium = obj.premium;
+    profileObj.influencer = obj.influencer;
+    profileObj.first_scraped_at = currentTimeForPOSTGESQL();
+    return profileObj;
+  } else if (dataSource == "cache") {
+    let profileObj = {};
+    profileObj.id = obj.id; // uuid
+    profileObj.url = obj.url;
+    profileObj.public_id = obj.public_id;
+    profileObj.linkedin_uid = obj.linkedin_uid;
+    profileObj.full_name = obj.full_name;
+    profileObj.headline = obj.headline;
+    profileObj.summary = obj.summary;
+    profileObj.image_url = obj.image_url;
+    profileObj.location = obj.location;
+    profileObj.employments = obj.employments;
+    profileObj.industry = obj.industry;
+    profileObj.skills = obj.skills;
+    profileObj.scraped_at = obj.scraped_at;
+    profileObj.created_at = obj.created_at;
+    profileObj.updated_at = obj.updated_at;
+    profileObj.first_name = obj.first_name;
+    profileObj.last_name = obj.last_name;
+    profileObj.premium = obj.premium;
+    profileObj.influencer = obj.influencer;
+    profileObj.first_scraped_at = obj.first_scraped_at;
+    return profileObj;
+  }
 };
 
 const companyDataDestructure = (obj, dataSource) => {
@@ -72,11 +157,46 @@ const companyDataDestructure = (obj, dataSource) => {
     companyObj.logo_url = obj.details.images.logo;
     companyObj.funding_data = obj.details.funding_data;
     companyObj.founded_on = obj.details.founded;
-    companyObj.success=true;
+    companyObj.success = true;
     return companyObj;
   }
 
   return obj;
+};
+
+const lastCountDays = (dateString, days) => {
+  const inputDate = new Date(dateString);
+
+  const currentDate = new Date();
+
+  const timeDifference = currentDate - inputDate;
+
+  const daysDifference = timeDifference / (1000 * 3600 * 24);
+
+  return daysDifference <= days;
+};
+
+const currentTimeForPOSTGESQL = () => {
+  const currentDate = new Date();
+
+  const formattedDate = `${currentDate.getUTCFullYear()}-${(
+    currentDate.getUTCMonth() + 1
+  )
+    .toString()
+    .padStart(2, "0")}-${currentDate
+    .getUTCDate()
+    .toString()
+    .padStart(2, "0")} ${currentDate
+    .getUTCHours()
+    .toString()
+    .padStart(2, "0")}:${currentDate
+    .getUTCMinutes()
+    .toString()
+    .padStart(2, "0")}:${currentDate
+    .getUTCSeconds()
+    .toString()
+    .padStart(2, "0")}`;
+  return formattedDate;
 };
 
 module.exports = {
@@ -85,4 +205,8 @@ module.exports = {
   iScraperOffset: iScraperOffset,
   sortByTitle: sortByTitle,
   companyDataDestructure: companyDataDestructure,
+  currentTimeForPOSTGESQL: currentTimeForPOSTGESQL,
+  generateUUID: generateUUID,
+  profileDataDestructure: profileDataDestructure,
+  lastCountDays: lastCountDays,
 };

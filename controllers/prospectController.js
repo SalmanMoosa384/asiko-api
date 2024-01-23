@@ -4,6 +4,7 @@ const helpers = require("../utils/functions/helper");
 const serpRequest = require("../utils/functions/brightdata/serpRequest");
 const serpResponse = require("../utils/functions/brightdata/serpResponse");
 const querySelect = require("../utils/functions/postgreSQL/querySelect");
+const profileInsert = require("../utils/functions/postgreSQL/profileInsert");
 
 const prospectController = async function (reqBody) {
   if (reqBody?.jobTitles && reqBody?.companylinkedinURL) {
@@ -20,7 +21,16 @@ const prospectController = async function (reqBody) {
       return { success: false, data: "job title is missing" };
     }
     reqBody.jobTitles = reqBody.jobTitles.map((element) =>
-      element.toLowerCase().trim()
+      element
+        .toLowerCase()
+        .trim()
+        .replaceAll(",", "")
+        .replaceAll(".", "")
+        .replaceAll("-", "")
+        .replaceAll("|", "")
+        .replaceAll(";", "")
+        .replaceAll("&", "")
+        .replaceAll("'", "")
     );
 
     if (limit > 20) {
@@ -46,7 +56,6 @@ const prospectController = async function (reqBody) {
     });
 
     if (!companyFromCache) {
-      console.log("company not found");
       companyDetail = await getProfile(reqBody.companylinkedinURL, "company");
       if (companyDetail.success) {
         companyDetail = await helpers.companyDataDestructure(
@@ -82,38 +91,65 @@ const prospectController = async function (reqBody) {
                 }
                 if (
                   reqBody.jobTitles.filter((k) =>
-                    profile.title
-                      .split("-")[1]
-                      .trim()
-                      .toLowerCase()
-                      .startsWith(k)
+                    profile.title.split("-")[1].trim().toLowerCase().includes(k)
                   ).length > 0
                 ) {
                   let profileLink = helpers.extractIdFromUrl(profile.link);
                   profileLink = profileLink.split("?")[0];
-                  let profileDetail = await getProfile(profileLink, "personal");
+
+                  let profileFromCache = false;
+                  let profileDetail = await querySelect(
+                    "linkedin_profiles",
+                    `where public_id='${profileLink}'`
+                  ).then((res) => {
+                    if (res.success) {
+                      console.log(`Profile ${profileLink} found from cache`);
+                      if (helpers.lastCountDays(res.data[0].scraped_at, 30)) {
+                        profileFromCache = true;
+                        res.data[0].success = true;
+                        return res.data[0];
+                      } else {
+                        console.log(
+                          `Profile ${profileLink} scraped date issue`
+                        );
+                      }
+                    }
+                  });
+
+                  if (!profileFromCache) {
+                    profileDetail = await getProfile(profileLink, "personal");
+                    console.log(`Profile ${profileLink} found from iscrapper`);
+                  }
 
                   if (profileDetail.success) {
+                    if (profileFromCache) {
+                      profileDetail.data = helpers.profileDataDestructure(
+                        profileDetail,
+                        "cache"
+                      );
+                    } else {
+                      profileDetail.data = helpers.profileDataDestructure(
+                        profileDetail.data,
+                        "iscrapper"
+                      );
+
+                      await profileInsert({ ...profileDetail.data });
+                    }
                     let getCurrentCompanyPosition =
-                      profileDetail.data.position_groups.filter((prof) => {
+                      profileDetail.data.employments.filter((prof) => {
                         return (
-                          prof.company.id == companyId &&
+                          prof.company_uid == companyId &&
                           reqBody.jobTitles.filter(
                             (k) =>
-                              prof.profile_positions[0].title
+                              prof.role_name
                                 .toLocaleLowerCase()
                                 .trim()
-                                .startsWith(k) &&
-                              prof.date.end.month == null &&
-                              prof.date.end.year == null
+                                .includes(k) && prof.activeEmployment == true
                           )
                         );
                       });
                     if (getCurrentCompanyPosition.length > 0) {
                       profileIds.push(profileLink);
-
-                      console.log("scrape from serp", profileLink);
-
                       count = count + 1;
                       responseDetail.profiles.push(profileDetail.data);
                     }
@@ -153,30 +189,66 @@ const prospectController = async function (reqBody) {
 
               if (!profileIds.includes(profile.profile_id)) {
                 await new Promise((resolve) => setTimeout(resolve, 500));
-                let profileDetail = await getProfile(
-                  profile.profile_id,
-                  "personal"
-                );
+
+                let profileFromCache = false;
+                let profileDetail = await querySelect(
+                  "linkedin_profiles",
+                  `where public_id='${profile.profile_id}'`
+                ).then((res) => {
+                  if (res.success) {
+                    console.log(
+                      `Profile ${profile.profile_id} found from cache`
+                    );
+
+                    if (helpers.lastCountDays(res.data[0].scraped_at, 30)) {
+                      profileFromCache = true;
+                      res.data[0].success = true;
+                      return res.data[0];
+                    } else {
+                      console.log(
+                        `Profile ${profile.profile_id} scraped date issue`
+                      );
+                    }
+                  }
+                });
+
+                if (!profileFromCache) {
+                  profileDetail = await getProfile(
+                    profile.profile_id,
+                    "personal"
+                  );
+                  console.log(
+                    `Profile ${profile.profile_id} found from iscrapper`
+                  );
+                }
 
                 if (profileDetail.success) {
+                  if (profileFromCache) {
+                    profileDetail.data = helpers.profileDataDestructure(
+                      profileDetail,
+                      "cache"
+                    );
+                  } else {
+                    profileDetail.data = helpers.profileDataDestructure(
+                      profileDetail.data,
+                      "iscrapper"
+                    );
+                    await profileInsert({ ...profileDetail.data });
+                  }
+
                   let getCurrentCompanyPosition =
-                    profileDetail.data.position_groups.filter((prof) => {
+                    profileDetail.data.employments.filter((prof) => {
                       return (
-                        prof.company.id == companyId &&
-                        prof.profile_positions[0].title
+                        prof.company_uid == companyId &&
+                        prof.role_name
                           .toLocaleLowerCase()
                           .trim()
-                          .startsWith(jobtitle) &&
-                        prof.date.end.month == null &&
-                        prof.date.end.year == null
+                          .includes(jobtitle) &&
+                        prof.activeEmployment == true
                       );
                     });
+
                   if (getCurrentCompanyPosition.length > 0) {
-                    console.log(
-                      "scrape from iscrapper",
-                      jobtitle,
-                      profile.profile_id
-                    );
                     count = count + 1;
                     profileIds.push(profile.profile_id);
                     responseDetail.profiles.push(profileDetail.data);
