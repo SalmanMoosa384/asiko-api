@@ -78,7 +78,7 @@ const prospectController = async function (reqBody) {
 
         let brightdataResponseID = await serpRequest(serpQuery);
         if (brightdataResponseID.success) {
-          await new Promise((resolve) => setTimeout(resolve, 7000));
+          await new Promise((resolve) => setTimeout(resolve, 4000));
           let brightDataResponse = await serpResponse(
             brightdataResponseID.responseId
           );
@@ -169,7 +169,7 @@ const prospectController = async function (reqBody) {
           }
 
           let companyId = companyDetail.linkedin_uid;
-          await new Promise((resolve) => setTimeout(resolve, 500));
+          // await new Promise((resolve) => setTimeout(resolve, 500));
           let peopleSearchData = await peopleSearch(
             companyId,
             jobtitle,
@@ -188,7 +188,7 @@ const prospectController = async function (reqBody) {
               }
 
               if (!profileIds.includes(profile.profile_id)) {
-                await new Promise((resolve) => setTimeout(resolve, 500));
+                // await new Promise((resolve) => setTimeout(resolve, 500));
 
                 let profileFromCache = false;
                 let profileDetail = await querySelect(
