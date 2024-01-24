@@ -14,10 +14,10 @@ module.exports = function (data) {
 
     const query = `
       INSERT INTO public.linkedin_profiles(
-        id, url, public_id, linkedin_uid, full_name, headline, summary, image_url, location, employments, industry, skills, scraped_at, created_at, updated_at, first_name, last_name, premium, influencer, first_scraped_at
+        id, url, public_id, linkedin_uid, full_name, headline, summary, image_url, location, employments, industry, skills, scraped_at, created_at, updated_at, first_name, last_name, premium, influencer, first_scraped_at,accessible,languages
       )
       VALUES (
-        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20
+        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22
       )
       ON CONFLICT (linkedin_uid) DO UPDATE
       SET 
@@ -36,7 +36,10 @@ module.exports = function (data) {
         first_name = EXCLUDED.first_name,
         last_name = EXCLUDED.last_name,
         premium = EXCLUDED.premium,
-        influencer = EXCLUDED.influencer
+        influencer = EXCLUDED.influencer,
+        accessible = EXCLUDED.accessible,
+        languages = EXCLUDED.languages
+
     `;
 
     client.query(query, Object.values(data), (queryError, result) => {
@@ -45,7 +48,7 @@ module.exports = function (data) {
       if (queryError) {
         console.error("Error executing query:", queryError);
       } else {
-        console.log("Insert or update successful");
+        console.log(data.public_id + " Insert or update successful");
       }
     });
   });

@@ -144,7 +144,7 @@ const prospectController = async function (reqBody) {
                               prof.role_name
                                 .toLocaleLowerCase()
                                 .trim()
-                                .includes(k) && prof.activeEmployment == true
+                                .includes(k) && prof.activeEmployment === true
                           )
                         );
                       });
@@ -244,7 +244,7 @@ const prospectController = async function (reqBody) {
                           .toLocaleLowerCase()
                           .trim()
                           .includes(jobtitle) &&
-                        prof.activeEmployment == true
+                        prof.activeEmployment === true
                       );
                     });
 

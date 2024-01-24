@@ -107,6 +107,15 @@ const profileDataDestructure = (obj, dataSource) => {
     profileObj.premium = obj.premium;
     profileObj.influencer = obj.influencer;
     profileObj.first_scraped_at = currentTimeForPOSTGESQL();
+    profileObj.accessible = true;
+
+    let languages = [];
+    obj.languages.profile_languages.map((k) => {
+      languages.push(k.name);
+    });
+
+    profileObj.languages = languages;
+
     return profileObj;
   } else if (dataSource == "cache") {
     let profileObj = {};
@@ -130,6 +139,8 @@ const profileDataDestructure = (obj, dataSource) => {
     profileObj.premium = obj.premium;
     profileObj.influencer = obj.influencer;
     profileObj.first_scraped_at = obj.first_scraped_at;
+    profileObj.accessible = true;
+    profileObj.languages = obj.languages;
     return profileObj;
   }
 };
