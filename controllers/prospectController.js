@@ -7,6 +7,7 @@ const querySelect = require("../utils/functions/postgreSQL/querySelect");
 const profileInsert = require("../utils/functions/postgreSQL/profileInsert");
 
 const prospectController = async function (reqBody) {
+  try{
   if (reqBody?.jobTitles && reqBody?.companylinkedinURL) {
     reqBody.companylinkedinURL = helpers.extractIdFromUrl(
       reqBody.companylinkedinURL
@@ -75,8 +76,8 @@ const prospectController = async function (reqBody) {
         } AND (intitle:"${reqBody.jobTitles.join('" OR intitle:"')}")`;
 
         let companyId = companyDetail.linkedin_uid;
-
         let brightdataResponseID = await serpRequest(serpQuery);
+        console.log("brightdataResponseID",brightdataResponseID)
         if (brightdataResponseID.success) {
           await new Promise((resolve) => setTimeout(resolve, 4000));
           let brightDataResponse = await serpResponse(
@@ -267,6 +268,10 @@ const prospectController = async function (reqBody) {
 
     return { success: true, data: responseDetail };
   }
+}
+catch(ex){
+  return {success:false, data:ex}
+}
 };
 
 module.exports = { prospectController };
