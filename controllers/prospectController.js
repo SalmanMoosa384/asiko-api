@@ -92,7 +92,7 @@ const prospectController = async function (reqBody) {
                 }
                 if (
                   reqBody.jobTitles.filter((k) =>
-                    profile.title.split("-")[1].trim().toLowerCase().includes(k)
+                    profile.title.split("-")[1]?.trim().toLowerCase().includes(k)
                   ).length > 0
                 ) {
                   let profileLink = helpers.extractIdFromUrl(profile.link);
