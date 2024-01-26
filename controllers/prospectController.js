@@ -79,7 +79,7 @@ const prospectController = async function (reqBody) {
         let brightdataResponseID = await serpRequest(serpQuery);
         console.log("brightdataResponseID",brightdataResponseID)
         if (brightdataResponseID.success) {
-          await new Promise((resolve) => setTimeout(resolve, 4000));
+          await new Promise((resolve) => setTimeout(resolve, 5000));
           let brightDataResponse = await serpResponse(
             brightdataResponseID.responseId
           );
