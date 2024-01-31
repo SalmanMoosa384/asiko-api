@@ -39,9 +39,20 @@ const rowsController = async function (req, domain) {
                 (i) => i.type == "facebook"
               )[0]?.followers / 100;
 
-              storeleadsRequest.data.domain.facebook_followers==null?"N/A":storeleadsRequest.data.domain.facebook_followers;
-              storeleadsRequest.data.domain.twitter_followers==null?"N/A":storeleadsRequest.data.domain.twitter_followers;
-              storeleadsRequest.data.domain.instagram_followers==null?"N/A":storeleadsRequest.data.domain.instagram_followers;
+            storeleadsRequest.data.domain.facebook_followers = storeleadsRequest
+              .data.domain.facebook_followers
+              ? storeleadsRequest.data.domain.facebook_followers
+              : "N/A";
+
+            storeleadsRequest.data.domain.twitter_followers = storeleadsRequest
+              .data.domain.twitter_followers
+              ? storeleadsRequest.data.domain.twitter_followers
+              : "N/A";
+
+            storeleadsRequest.data.domain.instagram_followers =
+              storeleadsRequest.data.domain.instagram_followers
+                ? storeleadsRequest.data.domain.instagram_followers
+                : "N/A";
 
             storeleadsRequest.data.domain.estimated_sales =
               storeleadsRequest.data.domain.estimated_sales / 100;
