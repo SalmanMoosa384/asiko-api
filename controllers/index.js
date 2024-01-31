@@ -1,5 +1,5 @@
 const { prospectController } = require("./prospectController");
 
-const { linkedinUrlController } = require("./linkedinUrlController");
+const { rowsController } = require("./rowsController");
 
-module.exports = { prospectController, linkedinUrlController };
+module.exports = { prospectController, rowsController };

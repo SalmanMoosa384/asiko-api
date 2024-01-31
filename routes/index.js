@@ -1,15 +1,19 @@
 const express = require("express");
 const routers = express.Router();
-const { prospectController, linkedinUrlController } = require("../controllers");
+const { prospectController, rowsController } = require("../controllers");
 
 routers.post("/api/linkedin/get-profiles", async function (req, res) {
   const result = await prospectController(req.body);
   res.send(result);
 });
 
-routers.get("/api/get-linkedin-id/:domain", async function (req, res) {
-  const result = await linkedinUrlController(req.params);
-  res.send(result);
+routers.get("/api/rows-data/:domain", async function (req, res) {
+  if (req.query.data) {
+    const result = await rowsController(req.query.data, req.params.domain);
+    res.send(result);
+  } else {
+    res.send({ success: false, data: "please provide atleast one type" });
+  }
 });
 
 module.exports = routers;
