@@ -1,6 +1,10 @@
 const express = require("express");
 const routers = express.Router();
-const { prospectController, rowsController } = require("../controllers");
+const {
+  prospectController,
+  rowsController,
+  getLinkedinUrl,
+} = require("../controllers");
 
 routers.post("/api/linkedin/get-profiles", async function (req, res) {
   const result = await prospectController(req.body);
@@ -14,6 +18,11 @@ routers.get("/api/rows-data/:domain", async function (req, res) {
   } else {
     res.send({ success: false, data: "please provide atleast one type" });
   }
+});
+
+routers.get("/api/get-linkedin-url/:domain", async function (req, res) {
+  const result = await getLinkedinUrl(req.params.domain);
+  res.send(result);
 });
 
 module.exports = routers;
