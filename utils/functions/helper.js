@@ -61,6 +61,10 @@ const sortByTitle = (profiles, desiredOrder) => {
   });
 };
 
+const sleep=(ms) =>{
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 const profileDataDestructure = (obj, dataSource) => {
   if (dataSource == "iscrapper") {
     let profileObj = {};
@@ -220,4 +224,5 @@ module.exports = {
   generateUUID: generateUUID,
   profileDataDestructure: profileDataDestructure,
   lastCountDays: lastCountDays,
+  sleep:sleep
 };

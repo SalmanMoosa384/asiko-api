@@ -20,8 +20,8 @@ routers.get("/api/rows-data/:domain", async function (req, res) {
   }
 });
 
-routers.get("/api/get-linkedin-url/:domain", async function (req, res) {
-  const result = await getLinkedinUrl(req.params.domain);
+routers.get("/api/get-linkedin-url/:domain/:sleeptime", async function (req, res) {
+  const result = await getLinkedinUrl(req.params.domain,req.params.sleeptime);
   res.send(result);
 });
 

@@ -1,8 +1,10 @@
 const querySelect = require("../utils/functions/postgreSQL/querySelect");
 const getProfile = require("../utils/functions/iscrapper/getProfile");
 const getDomainDetail = require("../utils/functions/storeLeads/getDomainDetail");
+const { sleep } = require("../utils/functions/helper");
 
-const getLinkedinUrl = async function (domain) {
+const getLinkedinUrl = async function (domain, sleepTime) {
+  await sleep(sleepTime * 1000);
   let response = "not found";
   try {
     let linkedin_url = await querySelect(
