@@ -8,8 +8,8 @@ const getLinkedinUrl = async function (domain, sleepTime) {
   let response = "not found";
   try {
     let linkedin_url = await querySelect(
-      "linkedin_companies",
-      `where company_url IN('https://${domain}','http://${domain}','https://www.${domain}','http://www.${domain}','${domain}','https://${domain}/','http://${domain}/','https://www.${domain}/','http://www.${domain}/','${domain}/')`
+      `linkedin_comapnies`,`join tam_companies on tam_companies.linkedin_company_id = linkedin_companies.id
+      where tam_companies.domain='${domain}'`
     );
     if (linkedin_url.success) {
       response = linkedin_url.data[0].public_id;
