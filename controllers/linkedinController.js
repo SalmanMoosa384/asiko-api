@@ -10,7 +10,7 @@ const getLinkedinUrl = async function (domain, sleepTime) {
     let linkedin_url = await querySelect(
       `linkedin_companies`,
       `join tam_companies on tam_companies.linkedin_company_id = linkedin_companies.id
-      where tam_companies.domain='cxl.com'`
+      where tam_companies.domain='${domain}'`
     );
 
     if (linkedin_url.success) {
