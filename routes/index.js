@@ -6,6 +6,34 @@ const {
   getLinkedinUrl,
 } = require("../controllers");
 
+const overwriteCell = require("../utils/functions/rows/overwriteCell");
+
+const cron = require("node-cron");
+
+const rowsItem = [];
+
+const rowsTask = async () => {
+  console.log("Cron job is runnings!");
+  const item = rowsItem.splice(0, 20);
+  for (let index = 0; index < item.length; index++) {
+    try {
+      const rowsResponse = await overwriteCell(item[index], "success");
+      console.log(rowsResponse);
+      console.log(item[index]);
+    } catch (error) {
+      console.error(`Error in API call: ${error.message}`);
+    }
+  }
+};
+
+cron.schedule("*/10 * * * * *", rowsTask);
+
+routers.get("/api/rows/rate-limit/:column/:row", function (req, res) {
+  const rowsCell = `${req.params.column}${req.params.row}:${req.params.column}${req.params.row}`;
+  rowsItem.push(rowsCell);
+  res.send("pending");
+});
+
 routers.post("/api/linkedin/get-profiles", async function (req, res) {
   const result = await prospectController(req.body);
   res.send(result);
@@ -20,9 +48,15 @@ routers.get("/api/rows-data/:domain", async function (req, res) {
   }
 });
 
-routers.get("/api/get-linkedin-url/:domain/:sleeptime", async function (req, res) {
-  const result = await getLinkedinUrl(req.params.domain,req.params.sleeptime);
-  res.send(result);
-});
+routers.get(
+  "/api/get-linkedin-url/:domain/:sleeptime",
+  async function (req, res) {
+    const result = await getLinkedinUrl(
+      req.params.domain,
+      req.params.sleeptime
+    );
+    res.send(result);
+  }
+);
 
 module.exports = routers;
