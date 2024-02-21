@@ -28,11 +28,14 @@ const rowsTask = async () => {
 
 cron.schedule("*/10 * * * * *", rowsTask);
 
-routers.get("/api/rows/rate-limit/:column/:row", function (req, res) {
-  const rowsCell = `${req.params.column}${req.params.row}:${req.params.column}${req.params.row}`;
-  rowsItem.push(rowsCell);
-  res.send("pending");
-});
+routers.get(
+  "/api/rows/rate-limit/:spreadsheet/:table/:column/:row",
+  function (req, res) {
+    const rowsUrl = `spreadsheets/${spreadsheet}/tables/${table}/cells/${req.params.column}${req.params.row}:${req.params.column}${req.params.row}`;
+    rowsItem.push(rowsUrl);
+    res.send("pending");
+  }
+);
 
 routers.post("/api/linkedin/get-profiles", async function (req, res) {
   const result = await prospectController(req.body);
