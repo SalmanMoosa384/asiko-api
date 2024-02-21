@@ -31,7 +31,7 @@ cron.schedule("*/10 * * * * *", rowsTask);
 routers.get(
   "/api/rows/rate-limit/:spreadsheet/:table/:column/:row",
   function (req, res) {
-    const rowsUrl = `spreadsheets/${spreadsheet}/tables/${table}/cells/${req.params.column}${req.params.row}:${req.params.column}${req.params.row}`;
+    const rowsUrl = `spreadsheets/${req.params.spreadsheet}/tables/${req.params.table}/cells/${req.params.column}${req.params.row}:${req.params.column}${req.params.row}`;
     rowsItem.push(rowsUrl);
     res.send("pending");
   }
