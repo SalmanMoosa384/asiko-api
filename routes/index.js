@@ -17,15 +17,17 @@ const rowsTask = async () => {
  
   for (let index = 0; index < 60; index++) {
     try {
+      if(rowsItem[index]){
       await new Promise((resolve)=>setTimeout(resolve,900))
       const rowsResponse = await overwriteCell(rowsItem[index], "success");
       if(rowsResponse.success){
-        console.log(rowsResponse,rowsItem[index]);
+        console.log(rowsResponse,`remaining items is ${rowsItem.length-1}`);
         rowsItem.splice(index, 1);
       }
       else{
         console.log("error",rowsResponse);
       }
+    }
     } catch (error) {
       console.error(`Error in API call: ${error.message}`);
     }
