@@ -14,20 +14,20 @@ const rowsItem = [];
 
 const rowsTask = async () => {
   console.log("Cron job is runnings!");
-  const item = rowsItem.splice(0, 20);
-  for (let index = 0; index < item.length; index++) {
+ 
+  for (let index = 0; index < 100; index++) {
     try {
-      await new Promise((resolve)=>setTimeout(resolve,300))
-      const rowsResponse = await overwriteCell(item[index], "success");
+      await new Promise((resolve)=>setTimeout(resolve,500))
+      const rowsResponse = await overwriteCell(rowsItem[index], "success");
       console.log(rowsResponse);
-      console.log(item[index]);
+      rowsItem.splice(index, 1);
     } catch (error) {
       console.error(`Error in API call: ${error.message}`);
     }
   }
 };
 
-cron.schedule("*/10 * * * * *", rowsTask);
+cron.schedule("*/1 * * * *", rowsTask);
 
 routers.get(
   "/api/rows/rate-limit/:spreadsheet/:table/:column/:row",
