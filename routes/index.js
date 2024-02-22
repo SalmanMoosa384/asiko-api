@@ -15,16 +15,16 @@ const rowsItem = [];
 const rowsTask = async () => {
   console.log("Cron job is runnings!");
  
-  for (let index = 0; index < 75; index++) {
+  for (let index = 0; index < 60; index++) {
     try {
-      await new Promise((resolve)=>setTimeout(resolve,750))
+      await new Promise((resolve)=>setTimeout(resolve,900))
       const rowsResponse = await overwriteCell(rowsItem[index], "success");
       if(rowsResponse.success){
-        console.log(rowsResponse);
+        console.log(rowsResponse,rowsItem[index]);
         rowsItem.splice(index, 1);
       }
       else{
-        console.log("error",express.response);
+        console.log("error",rowsResponse);
       }
     } catch (error) {
       console.error(`Error in API call: ${error.message}`);
