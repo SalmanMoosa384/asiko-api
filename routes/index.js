@@ -17,7 +17,7 @@ const rowsTask = async () => {
  
   for (let index = 0; index < 100; index++) {
     try {
-      await new Promise((resolve)=>setTimeout(resolve,500))
+      await new Promise((resolve)=>setTimeout(resolve,550))
       const rowsResponse = await overwriteCell(rowsItem[index], "success");
       console.log(rowsResponse);
       rowsItem.splice(index, 1);
