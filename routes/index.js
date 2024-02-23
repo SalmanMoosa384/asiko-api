@@ -15,7 +15,7 @@ const rowsItem = [];
 const processRow = async (index) => {
   try {
     if (rowsItem[index]) {
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      await new Promise((resolve) => setTimeout(resolve, 750));
       const rowsResponse = await overwriteCell(rowsItem[index], "success");
       if (rowsResponse.success) {
         console.log(
@@ -34,16 +34,12 @@ const processRow = async (index) => {
 
 const rowsTask = async () => {
   console.log("Cron job is running!");
-  let forCount = 60;
-  if (rowsItem.length < forCount) {
-    forCount = rowsItem.length;
-  }
-  for (let index = 0; index < forCount; index++) {
+  for (let index = 0; index < 10; index++) {
     await processRow(index);
   }
 };
 
-cron.schedule("*/1 * * * *", rowsTask);
+cron.schedule("*/10 * * * * *", rowsTask);
 
 routers.get(
   "/api/rows/rate-limit/:spreadsheet/:table/:column/:row",
