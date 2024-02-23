@@ -12,29 +12,33 @@ const cron = require("node-cron");
 
 const rowsItem = [];
 
-const rowsTask = async () => {
-  console.log("Cron job is runnings!");
- 
-  for (let index = 0; index < 60; index++) {
-    try {
-      if(rowsItem[index]){
-      await new Promise((resolve)=>setTimeout(resolve,900))
+const processRow = async (index) => {
+  try {
+    if (rowsItem[index]) {
+      await new Promise((resolve) => setTimeout(resolve, 800));
       const rowsResponse = await overwriteCell(rowsItem[index], "success");
-      if(rowsResponse.success){
-        console.log(rowsResponse,`remaining items is ${rowsItem.length-1}`);
+      if (rowsResponse.success) {
+        console.log(rowsResponse, `remaining items is ${rowsItem.length - 1}`);
         rowsItem.splice(index, 1);
-      }
-      else{
-        console.log("error",rowsResponse);
+      } else {
+        console.log("error", rowsResponse);
       }
     }
-    } catch (error) {
-      console.error(`Error in API call: ${error.message}`);
-    }
+  } catch (error) {
+    console.error(`Error in API call: ${error.message}`);
+  }
+};
+
+const rowsTask = async () => {
+  console.log("Cron job is running!");
+
+  for (let index = 0; index < 60; index++) {
+    await processRow(index);
   }
 };
 
 cron.schedule("*/1 * * * *", rowsTask);
+
 
 routers.get(
   "/api/rows/rate-limit/:spreadsheet/:table/:column/:row",
