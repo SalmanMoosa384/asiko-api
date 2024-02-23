@@ -18,7 +18,7 @@ const processRow = async (index) => {
       await new Promise((resolve) => setTimeout(resolve, 800));
       const rowsResponse = await overwriteCell(rowsItem[index], "success");
       if (rowsResponse.success) {
-        console.log(rowsResponse, `remaining items is ${rowsItem.length - 1}`);
+        console.log(rowsResponse, `remaining items is ${rowsItem.length - 1} index ${index}`);
         rowsItem.splice(index, 1);
       } else {
         console.log("error", rowsResponse);
