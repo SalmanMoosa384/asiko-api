@@ -18,7 +18,10 @@ const processRow = async (index) => {
       await new Promise((resolve) => setTimeout(resolve, 800));
       const rowsResponse = await overwriteCell(rowsItem[index], "success");
       if (rowsResponse.success) {
-        console.log(rowsResponse, `remaining items is ${rowsItem.length - 1} index ${index}`);
+        console.log(
+          rowsResponse,
+          `remaining items is ${rowsItem.length - 1} index ${index}`
+        );
         rowsItem.splice(index, 1);
       } else {
         console.log("error", rowsResponse);
@@ -31,14 +34,16 @@ const processRow = async (index) => {
 
 const rowsTask = async () => {
   console.log("Cron job is running!");
-
-  for (let index = 0; index < 60; index++) {
+  let forCount = 60;
+  if (rowsItem.length < forCount) {
+    forCount = rowsItem.length;
+  }
+  for (let index = 0; index < forCount; index++) {
     await processRow(index);
   }
 };
 
 cron.schedule("*/1 * * * *", rowsTask);
-
 
 routers.get(
   "/api/rows/rate-limit/:spreadsheet/:table/:column/:row",
