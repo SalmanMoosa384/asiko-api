@@ -34,11 +34,7 @@ const processRow = async (index) => {
 
 const rowsTask = async () => {
   console.log("Cron job is running!");
-  let forCount = 60;
-  if (rowsItem.length < forCount) {
-    forCount = rowsItem.length;
-  }
-  for (let index = 0; index < forCount; index++) {
+  for (let index = 0; index < 60; index++) {
     await processRow(index);
   }
 };
