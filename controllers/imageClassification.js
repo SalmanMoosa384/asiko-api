@@ -37,6 +37,7 @@ const checkUnFurnishedImage = async (img) => {
           imageUrl: "http://164.90.146.161:3002/image/converted_image.jpg",
         })
         .then((predictions) => {
+          console.log("predictions",predictions);
           return predictions;
         })
         .catch((e) => {
