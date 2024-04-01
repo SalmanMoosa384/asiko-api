@@ -1,9 +1,11 @@
 const express = require("express");
+const path = require("path");
 const routers = express.Router();
 const {
   prospectController,
   rowsController,
   getLinkedinUrl,
+  checkUnFurnishedImage,
 } = require("../controllers");
 
 const overwriteCell = require("../utils/functions/rows/overwriteCell");
@@ -74,5 +76,19 @@ routers.get(
     res.send(result);
   }
 );
+
+routers.post("/api/check-unfurnished-image", async function (req, res) {
+  const result = await checkUnFurnishedImage(req.body?.imgpath);
+  res.send(result);
+});
+
+const imagesFolder = path.join(__dirname, "../images");
+routers.use("/images", express.static(imagesFolder));
+
+routers.get("/image/:imageName", (req, res) => {
+  const imageName = req.params.imageName;
+  const imagePath = path.join(imagesFolder, imageName);
+  res.sendFile(imagePath);
+});
 
 module.exports = routers;

@@ -4,4 +4,11 @@ const { rowsController } = require("./rowsController");
 
 const { getLinkedinUrl } = require("./linkedinController");
 
-module.exports = { prospectController, rowsController, getLinkedinUrl };
+const { checkUnFurnishedImage } = require("./imageClassification");
+
+module.exports = {
+  prospectController,
+  rowsController,
+  getLinkedinUrl,
+  checkUnFurnishedImage,
+};
