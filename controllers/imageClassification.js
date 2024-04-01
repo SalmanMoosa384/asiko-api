@@ -29,7 +29,7 @@ const checkUnFurnishedImage = async (img) => {
   const webpUrl =
     "https://photos.zillowstatic.com/fp/37834c3c0a49dc00ccc2282cf0f2e3a6-cc_ft_768.webp";
   const outputFolderName = "images"; // Specify the output folder name here
-  convertWebPtoJPG(webpUrl, outputFolderName).then((outputFilePath) => {
+  return convertWebPtoJPG(webpUrl, outputFolderName).then((outputFilePath) => {
     if (outputFilePath) {
       console.log("Converted image path:", outputFilePath);
       return model
