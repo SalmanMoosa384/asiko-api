@@ -26,8 +26,7 @@ async function convertWebPtoJPG(webpUrl, outputFolderName) {
   }
 }
 const checkUnFurnishedImage = async (img) => {
-  const webpUrl =
-    "https://photos.zillowstatic.com/fp/37834c3c0a49dc00ccc2282cf0f2e3a6-cc_ft_768.webp";
+  const webpUrl = img;
   const outputFolderName = "images"; // Specify the output folder name here
   return convertWebPtoJPG(webpUrl, outputFolderName).then((outputFilePath) => {
     if (outputFilePath) {
