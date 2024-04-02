@@ -41,7 +41,7 @@ const checkUnFurnishedImage = async (img) => {
           if(predictions[0]?.class=="Unfurnished" && predictions[0].score>0.7){
             unFurnished=true;
           }
-          return {unFurnished:unFurnished,message:`Image is ${unFurnished==false && 'not'} furnished`};
+          return {unFurnished:unFurnished,message:`Image is ${unFurnished?'':'not'} furnished`};
         })
         .catch((e) => {
           console.error(e);
