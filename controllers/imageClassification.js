@@ -6,7 +6,7 @@ const os = require("os");
 const path = require("path");
 
 const model = new TeachableMachine({
-  modelUrl: process.env.IMAGE_MODAL,
+  modelUrl: "https://teachablemachine.withgoogle.com/models/Tj56WxYJn/",
 });
 
 async function convertWebPtoJPG(webpUrl, outputFolderName) {
@@ -37,7 +37,11 @@ const checkUnFurnishedImage = async (img) => {
         })
         .then((predictions) => {
           console.log("predictions",predictions);
-          return predictions;
+          let unFurnished=false;
+          if(predictions[0]?.class=="Unfurnished" && predictions[0].score>0.7){
+            unFurnished=true;
+          }
+          return {unFurnished:unFurnished,message:`Image is ${unFurnished==false && 'not'} furnished`};
         })
         .catch((e) => {
           console.error(e);
