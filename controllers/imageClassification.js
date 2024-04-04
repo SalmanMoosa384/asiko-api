@@ -36,6 +36,7 @@ const checkUnFurnishedImage = async (img) => {
           imageUrl: "http://164.90.146.161:3002/image/converted_image.jpg",
         })
         .then((predictions) => {
+          return predictions;
           console.log("predictions",predictions);
           let unFurnished=false;
           if(predictions[0]?.class=="Unfurnished" && predictions[0].score>0.7){
