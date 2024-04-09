@@ -86,6 +86,7 @@ routers.get(
 routers.post("/api/check-unfurnished-image", async function (req, res) {
   try {
       const data = await Promise.all(req.body.map(async (imgpath) => {
+        console.log("imgpath",imgpath)
           const dt=await checkUnFurnishedImage(imgpath);
           return [...dt,{img:imgpath}];
       }));
