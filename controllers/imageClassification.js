@@ -33,7 +33,7 @@ const checkUnFurnishedImage = async (img) => {
       console.log("Converted image path:", outputFilePath);
       return model
         .classify({
-          imageUrl: "http://164.90.146.161:3002/image/converted_image.jpg",
+          imageUrl: "http://localhost:3002/image/converted_image.jpg",
         })
         .then((predictions) => {
           return predictions;

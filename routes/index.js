@@ -85,22 +85,22 @@ routers.get(
 
 routers.post("/api/check-unfurnished-image", async function (req, res) {
   try {
-      const data = await Promise.all(req.body.map(async (imgpath) => {
+      const data = [];
+      for (const imgpath of req.body) {
           console.log("imgpath", imgpath);
-          return new Promise((resolve) => {
-              setTimeout(async () => {
-                  const dt = await checkUnFurnishedImage(imgpath);
-                  resolve([...dt, { img: imgpath }]);
-              }, 1000); // 1000 milliseconds = 1 second
-          });
-      }));
+          const dt = await checkUnFurnishedImage(imgpath);
+          data.push([...dt, { img: imgpath }]);
+          await delay(500); // Wait for 1 second before starting the next iteration
+      }
       res.send(data);
   } catch (error) {
       res.status(500).send({ error: error.message });
   }
 });
 
-
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 const imagesFolder = path.join(__dirname, "../images");
 routers.use("/images", express.static(imagesFolder));
