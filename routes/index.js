@@ -86,15 +86,20 @@ routers.get(
 routers.post("/api/check-unfurnished-image", async function (req, res) {
   try {
       const data = await Promise.all(req.body.map(async (imgpath) => {
-        console.log("imgpath",imgpath)
-          const dt=await checkUnFurnishedImage(imgpath);
-          return [...dt,{img:imgpath}];
+          console.log("imgpath", imgpath);
+          return new Promise((resolve) => {
+              setTimeout(async () => {
+                  const dt = await checkUnFurnishedImage(imgpath);
+                  resolve([...dt, { img: imgpath }]);
+              }, 1000); // 1000 milliseconds = 1 second
+          });
       }));
       res.send(data);
   } catch (error) {
       res.status(500).send({ error: error.message });
   }
 });
+
 
 
 const imagesFolder = path.join(__dirname, "../images");
