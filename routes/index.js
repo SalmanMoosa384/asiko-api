@@ -77,11 +77,24 @@ routers.get(
   }
 );
 
-routers.post("/api/check-unfurnished-image", async function (req, res) {
-  const result = await checkUnFurnishedImage(req.body?.imgpath);
+// routers.post("/api/check-unfurnished-image", async function (req, res) {
+//   const result = await checkUnFurnishedImage(req.body?.imgpath);
   
-  res.send([...result,{img:req.body?.imgpath}]);
+//   res.send([...result,{img:req.body?.imgpath}]);
+// });
+
+routers.post("/api/check-unfurnished-image", async function (req, res) {
+  try {
+      const data = await Promise.all(req.body.map(async (imgpath) => {
+          const dt=await checkUnFurnishedImage(imgpath);
+          return [...dt,{img:imgpath}];
+      }));
+      res.send(data);
+  } catch (error) {
+      res.status(500).send({ error: error.message });
+  }
 });
+
 
 const imagesFolder = path.join(__dirname, "../images");
 routers.use("/images", express.static(imagesFolder));
