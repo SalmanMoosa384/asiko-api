@@ -89,7 +89,7 @@ routers.post("/api/check-unfurnished-image", async function (req, res) {
       for (const imgpath of req.body) {
           console.log("imgpath", imgpath);
           const dt = await checkUnFurnishedImage(imgpath);
-          data.push([...dt, { img: imgpath }]);
+          data.push([[...dt, { img: imgpath }]]);
           await delay(500); // Wait for 1 second before starting the next iteration
       }
       res.send(data);
