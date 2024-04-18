@@ -6,7 +6,7 @@ const os = require("os");
 const path = require("path");
 
 const model = new TeachableMachine({
-  modelUrl: "https://teachablemachine.withgoogle.com/models/fNuJTbQgx/",
+  modelUrl: "https://teachablemachine.withgoogle.com/models/4IT9K9w6x/",
 });
 
 async function convertWebPtoJPG(webpUrl, outputFolderName) {
