@@ -6,6 +6,7 @@ const {
   rowsController,
   getLinkedinUrl,
   checkUnFurnishedImage,
+  mergedImages
 } = require("../controllers");
 
 const overwriteCell = require("../utils/functions/rows/overwriteCell");
@@ -83,6 +84,11 @@ routers.get(
 //   res.send([...result,{img:req.body?.imgpath}]);
 // });
 
+routers.post("/api/merged-images",async function(req,res){
+  const result=await mergedImages(req.body.beforeimage,req.body.afterimage);
+  res.send(result)
+})
+
 routers.post("/api/check-unfurnished-image", async function (req, res) {
   try {
       const data = [];
@@ -108,6 +114,14 @@ routers.use("/images", express.static(imagesFolder));
 routers.get("/image/:imageName", (req, res) => {
   const imageName = req.params.imageName;
   const imagePath = path.join(imagesFolder, imageName);
+  res.sendFile(imagePath);
+});
+
+
+routers.get("/image/:folder/:imageName", (req, res) => {
+  const imageName = req.params.imageName;
+  const folder = req.params.folder;
+  const imagePath = path.join(folder, imageName);
   res.sendFile(imagePath);
 });
 
