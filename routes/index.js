@@ -89,7 +89,7 @@ routers.post("/api/merged-images",async function(req,res){
   res.send(result)
 })
 
-routers.post("/api/check-unfurnished-image", async function (req, res) {
+routers.post("/api/check-unfurnished-image/:rand", async function (req, res) {
   try {
       const data = [];
       for (const imgpath of req.body) {

@@ -56,6 +56,19 @@ async function convertWebPtoJPG(webpUrl, outputFolderName) {
 const checkUnFurnishedImage = async (img) => {
   const webpUrl = img;
   const outputFolderName = "images"; // Specify the output folder name here
+
+  return model
+    .classify({
+      imageUrl: webpUrl,
+    })
+    .then((predictions) => {
+      return predictions;
+    })
+    .catch((e) => {
+      console.error(e);
+      return e;
+    });
+
   return convertWebPtoJPG(webpUrl, outputFolderName).then((outputFilePath) => {
     if (outputFilePath) {
       console.log("Converted image path:", outputFilePath);
