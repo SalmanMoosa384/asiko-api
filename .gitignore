@@ -10,7 +10,7 @@ logs
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
-
+images/
 # Optional npm cache directory
 .npm
 .env

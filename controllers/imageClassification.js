@@ -30,7 +30,9 @@ const mergedImages = async (before, after) => {
         img.bitmap.height - 60,
         "After"
       );
+      
     });
+    img.quality(70);
 
     img.write(`images/merged/${imageName}.png`);
     return `http://164.90.146.161:3002/images/merged/${imageName}.png`;
